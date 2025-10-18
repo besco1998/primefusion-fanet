@@ -1,0 +1,1164 @@
+[
+  {
+    "config": {
+      "num_uavs": 3,
+      "simulation_duration": 30.0,
+      "communication_range": 500.0,
+      "beacon_interval": 1.0
+    },
+    "execution": {
+      "execution_time": 0.012464284896850586,
+      "simulation_duration": 30.0,
+      "time_steps": 300
+    },
+    "network": {
+      "total_beacons_sent": 87,
+      "total_beacons_received": 0,
+      "packet_delivery_ratio": 0.0,
+      "avg_neighbors": 0.0,
+      "total_transactions": 44,
+      "consensus_rounds": 5
+    },
+    "performance": {
+      "avg_beacon_latency": 0.09550993469939835,
+      "avg_beacon_size": 159.367816091954,
+      "avg_compression_ratio": 0.5043188608049413,
+      "avg_chain_length": 15.666666666666666,
+      "avg_cpu_reduction": 89.28329911846396
+    },
+    "nodes": [
+      {
+        "node_id": 1,
+        "uptime": 0.01311039924621582,
+        "position": {
+          "latitude": 40.714363514634556,
+          "longitude": -74.00770202301004,
+          "altitude": 133.74356934354833
+        },
+        "velocity": {
+          "x": -1.0188232248794709,
+          "y": 2.5903329111886144,
+          "z": 1.0129856702826117,
+          "speed": 2.962088000471728
+        },
+        "battery": 99.50000000000045,
+        "status": "active",
+        "beacons_sent": 29,
+        "beacons_received": 0,
+        "transactions_created": 13,
+        "consensus_rounds": 5,
+        "neighbors": 0,
+        "neighbor_ids": [],
+        "beacon_performance": {
+          "total_beacons": 29,
+          "avg_beacon_size": 159.0,
+          "avg_trailer_size": 12.0,
+          "avg_compression_ratio": 0.5011801131029758,
+          "avg_total_latency": 0.10654021953714304,
+          "target_latency_met": true,
+          "target_trailer_met": true,
+          "blockchain_stats": {
+            "total_operations": 13,
+            "total_blocks": 14,
+            "avg_add_latency": 0.016102424034705527,
+            "avg_verify_latency": 0.0,
+            "chain_valid": true,
+            "session_mac_cpu_reduction": 88.77551020408164,
+            "session_mac_target_met": true
+          },
+          "milestone_stats": {
+            "total_operations": 87,
+            "avg_encode_latency": 0.0015373887686893858,
+            "avg_decode_latency": 0.0,
+            "avg_trailer_latency": 0.004908134197366649,
+            "dag_tips_tracked": 5,
+            "trailer_size_bytes": 12,
+            "target_latency_met": true
+          },
+          "cbor_stats": {
+            "total_compressions": 29,
+            "avg_compression_ratio": 0.5011801131029758,
+            "avg_latency": 0.08911099927178745,
+            "total_bytes_saved": 4243,
+            "target_ratio_met": true,
+            "target_latency_met": true
+          }
+        }
+      },
+      {
+        "node_id": 2,
+        "uptime": 0.01307368278503418,
+        "position": {
+          "latitude": 40.72098485578624,
+          "longitude": -74.01399320485068,
+          "altitude": 55.23189786984963
+        },
+        "velocity": {
+          "x": 0.2349681845718532,
+          "y": -6.858537949828132,
+          "z": -1.475030215732429,
+          "speed": 7.019292485309137
+        },
+        "battery": 99.50000000000045,
+        "status": "active",
+        "beacons_sent": 29,
+        "beacons_received": 0,
+        "transactions_created": 19,
+        "consensus_rounds": 5,
+        "neighbors": 0,
+        "neighbor_ids": [],
+        "beacon_performance": {
+          "total_beacons": 29,
+          "avg_beacon_size": 159.86206896551724,
+          "avg_trailer_size": 12.0,
+          "avg_compression_ratio": 0.5068014806729876,
+          "avg_total_latency": 0.09227621144261854,
+          "target_latency_met": true,
+          "target_trailer_met": true,
+          "blockchain_stats": {
+            "total_operations": 19,
+            "total_blocks": 20,
+            "avg_add_latency": 0.01991422552811472,
+            "avg_verify_latency": 0.0,
+            "chain_valid": true,
+            "session_mac_cpu_reduction": 90.82417582417582,
+            "session_mac_target_met": true
+          },
+          "milestone_stats": {
+            "total_operations": 87,
+            "avg_encode_latency": 0.0011427649136247307,
+            "avg_decode_latency": 0.0,
+            "avg_trailer_latency": 0.003839361256566541,
+            "dag_tips_tracked": 5,
+            "trailer_size_bytes": 12,
+            "target_latency_met": true
+          },
+          "cbor_stats": {
+            "total_compressions": 29,
+            "avg_compression_ratio": 0.5068014806729876,
+            "avg_latency": 0.07691054508603852,
+            "total_bytes_saved": 4173,
+            "target_ratio_met": true,
+            "target_latency_met": true
+          }
+        }
+      },
+      {
+        "node_id": 3,
+        "uptime": 0.013160943984985352,
+        "position": {
+          "latitude": 40.7149107804631,
+          "longitude": -73.99841975643541,
+          "altitude": 62.18289133950884
+        },
+        "velocity": {
+          "x": 9.930627774165824,
+          "y": -8.236997943572575,
+          "z": 1.9478367224142588,
+          "speed": 13.048355107393347
+        },
+        "battery": 99.50000000000045,
+        "status": "active",
+        "beacons_sent": 29,
+        "beacons_received": 0,
+        "transactions_created": 12,
+        "consensus_rounds": 5,
+        "neighbors": 0,
+        "neighbor_ids": [],
+        "beacon_performance": {
+          "total_beacons": 29,
+          "avg_beacon_size": 159.24137931034483,
+          "avg_trailer_size": 12.0,
+          "avg_compression_ratio": 0.5049749886388605,
+          "avg_total_latency": 0.08771337311843345,
+          "target_latency_met": true,
+          "target_trailer_met": true,
+          "blockchain_stats": {
+            "total_operations": 12,
+            "total_blocks": 13,
+            "avg_add_latency": 0.02010663350423177,
+            "avg_verify_latency": 0.0,
+            "chain_valid": true,
+            "session_mac_cpu_reduction": 88.25021132713441,
+            "session_mac_target_met": true
+          },
+          "milestone_stats": {
+            "total_operations": 87,
+            "avg_encode_latency": 0.00095367431640625,
+            "avg_decode_latency": 0.0,
+            "avg_trailer_latency": 0.003346081437735722,
+            "dag_tips_tracked": 5,
+            "trailer_size_bytes": 12,
+            "target_latency_met": true
+          },
+          "cbor_stats": {
+            "total_compressions": 29,
+            "avg_compression_ratio": 0.5049749886388605,
+            "avg_latency": 0.07451813796470905,
+            "total_bytes_saved": 4186,
+            "target_ratio_met": true,
+            "target_latency_met": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "config": {
+      "num_uavs": 5,
+      "simulation_duration": 30.0,
+      "communication_range": 500.0,
+      "beacon_interval": 1.0
+    },
+    "execution": {
+      "execution_time": 0.027324438095092773,
+      "simulation_duration": 30.0,
+      "time_steps": 300
+    },
+    "network": {
+      "total_beacons_sent": 145,
+      "total_beacons_received": 114,
+      "packet_delivery_ratio": 0.7862068965517242,
+      "avg_neighbors": 0.8,
+      "total_transactions": 68,
+      "consensus_rounds": 5
+    },
+    "performance": {
+      "avg_beacon_latency": 0.10395050048828125,
+      "avg_beacon_size": 159.58620689655172,
+      "avg_compression_ratio": 0.5047468779241782,
+      "avg_chain_length": 14.6,
+      "avg_cpu_reduction": 88.95962231046265
+    },
+    "nodes": [
+      {
+        "node_id": 1,
+        "uptime": 0.028155803680419922,
+        "position": {
+          "latitude": 40.719615801136285,
+          "longitude": -73.99814659625304,
+          "altitude": 88.7971650659921
+        },
+        "velocity": {
+          "x": 0.3370982094899144,
+          "y": 1.6194495408786942,
+          "z": -0.29428588986414805,
+          "speed": 1.6801357692956405
+        },
+        "battery": 99.50000000000045,
+        "status": "active",
+        "beacons_sent": 29,
+        "beacons_received": 0,
+        "transactions_created": 13,
+        "consensus_rounds": 5,
+        "neighbors": 0,
+        "neighbor_ids": [],
+        "beacon_performance": {
+          "total_beacons": 29,
+          "avg_beacon_size": 159.3793103448276,
+          "avg_trailer_size": 12.0,
+          "avg_compression_ratio": 0.5023525861377042,
+          "avg_total_latency": 0.14488450412092538,
+          "target_latency_met": true,
+          "target_trailer_met": true,
+          "blockchain_stats": {
+            "total_operations": 13,
+            "total_blocks": 14,
+            "avg_add_latency": 0.017661314744215745,
+            "avg_verify_latency": 0.0,
+            "chain_valid": true,
+            "session_mac_cpu_reduction": 88.77551020408164,
+            "session_mac_target_met": true
+          },
+          "milestone_stats": {
+            "total_operations": 87,
+            "avg_encode_latency": 0.0010687729408001077,
+            "avg_decode_latency": 0.0,
+            "avg_trailer_latency": 0.0035433933652680495,
+            "dag_tips_tracked": 5,
+            "trailer_size_bytes": 12,
+            "target_latency_met": true
+          },
+          "cbor_stats": {
+            "total_compressions": 29,
+            "avg_compression_ratio": 0.5023525861377042,
+            "avg_latency": 0.13066160267797008,
+            "total_bytes_saved": 4234,
+            "target_ratio_met": true,
+            "target_latency_met": false
+          }
+        }
+      },
+      {
+        "node_id": 2,
+        "uptime": 0.028195858001708984,
+        "position": {
+          "latitude": 40.70812304915581,
+          "longitude": -74.00296008083122,
+          "altitude": 139.17422771438916
+        },
+        "velocity": {
+          "x": 0.764835907143393,
+          "y": -5.164167472077985,
+          "z": 1.6924727713483545,
+          "speed": 5.4879926864273205
+        },
+        "battery": 99.50000000000045,
+        "status": "active",
+        "beacons_sent": 29,
+        "beacons_received": 28,
+        "transactions_created": 13,
+        "consensus_rounds": 5,
+        "neighbors": 1,
+        "neighbor_ids": [
+          3
+        ],
+        "beacon_performance": {
+          "total_beacons": 29,
+          "avg_beacon_size": 159.13793103448276,
+          "avg_trailer_size": 12.0,
+          "avg_compression_ratio": 0.5051579739138404,
+          "avg_total_latency": 0.09447952796672952,
+          "target_latency_met": true,
+          "target_trailer_met": true,
+          "blockchain_stats": {
+            "total_operations": 13,
+            "total_blocks": 14,
+            "avg_add_latency": 0.016120763925405648,
+            "avg_verify_latency": 0.0,
+            "chain_valid": true,
+            "session_mac_cpu_reduction": 88.77551020408164,
+            "session_mac_target_met": true
+          },
+          "milestone_stats": {
+            "total_operations": 115,
+            "avg_encode_latency": 0.001011223628603179,
+            "avg_decode_latency": 0.0006556510925292969,
+            "avg_trailer_latency": 0.003321417446794181,
+            "dag_tips_tracked": 5,
+            "trailer_size_bytes": 12,
+            "target_latency_met": true
+          },
+          "cbor_stats": {
+            "total_compressions": 29,
+            "avg_compression_ratio": 0.5051579739138404,
+            "avg_latency": 0.08191733524717133,
+            "total_bytes_saved": 4180,
+            "target_ratio_met": true,
+            "target_latency_met": true
+          }
+        }
+      },
+      {
+        "node_id": 3,
+        "uptime": 0.028247356414794922,
+        "position": {
+          "latitude": 40.70717851893037,
+          "longitude": -74.00716285841862,
+          "altitude": 58.176363461007746
+        },
+        "velocity": {
+          "x": -4.152960467409612,
+          "y": -2.559756804919604,
+          "z": -1.3772209691146875,
+          "speed": 5.069139290053932
+        },
+        "battery": 99.50000000000045,
+        "status": "active",
+        "beacons_sent": 29,
+        "beacons_received": 40,
+        "transactions_created": 11,
+        "consensus_rounds": 5,
+        "neighbors": 2,
+        "neighbor_ids": [
+          2,
+          4
+        ],
+        "beacon_performance": {
+          "total_beacons": 29,
+          "avg_beacon_size": 159.89655172413794,
+          "avg_trailer_size": 12.0,
+          "avg_compression_ratio": 0.505483845002076,
+          "avg_total_latency": 0.095367431640625,
+          "target_latency_met": true,
+          "target_trailer_met": true,
+          "blockchain_stats": {
+            "total_operations": 11,
+            "total_blocks": 12,
+            "avg_add_latency": 0.016559254039417614,
+            "avg_verify_latency": 0.0,
+            "chain_valid": true,
+            "session_mac_cpu_reduction": 87.63736263736264,
+            "session_mac_target_met": true
+          },
+          "milestone_stats": {
+            "total_operations": 127,
+            "avg_encode_latency": 0.0008550183526400862,
+            "avg_decode_latency": 0.0007092952728271484,
+            "avg_trailer_latency": 0.0030747775373787716,
+            "dag_tips_tracked": 5,
+            "trailer_size_bytes": 12,
+            "target_latency_met": true
+          },
+          "cbor_stats": {
+            "total_compressions": 29,
+            "avg_compression_ratio": 0.505483845002076,
+            "avg_latency": 0.08355337997962689,
+            "total_bytes_saved": 4196,
+            "target_ratio_met": true,
+            "target_latency_met": true
+          }
+        }
+      },
+      {
+        "node_id": 4,
+        "uptime": 0.02830815315246582,
+        "position": {
+          "latitude": 40.70608050746181,
+          "longitude": -74.00792603456293,
+          "altitude": 144.27341138065253
+        },
+        "velocity": {
+          "x": -0.2503636886321914,
+          "y": 8.243582698934347,
+          "z": -1.3424299093119263,
+          "speed": 8.355923393148744
+        },
+        "battery": 99.50000000000045,
+        "status": "active",
+        "beacons_sent": 29,
+        "beacons_received": 29,
+        "transactions_created": 15,
+        "consensus_rounds": 5,
+        "neighbors": 1,
+        "neighbor_ids": [
+          3
+        ],
+        "beacon_performance": {
+          "total_beacons": 29,
+          "avg_beacon_size": 160.06896551724137,
+          "avg_trailer_size": 12.0,
+          "avg_compression_ratio": 0.5061347832426918,
+          "avg_total_latency": 0.09461929058206492,
+          "target_latency_met": true,
+          "target_trailer_met": true,
+          "blockchain_stats": {
+            "total_operations": 15,
+            "total_blocks": 16,
+            "avg_add_latency": 0.016053517659505207,
+            "avg_verify_latency": 0.0,
+            "chain_valid": true,
+            "session_mac_cpu_reduction": 89.62912087912088,
+            "session_mac_target_met": true
+          },
+          "milestone_stats": {
+            "total_operations": 116,
+            "avg_encode_latency": 0.0008467970223262392,
+            "avg_decode_latency": 0.0006577064251077587,
+            "avg_trailer_latency": 0.0029350149220433728,
+            "dag_tips_tracked": 5,
+            "trailer_size_bytes": 12,
+            "target_latency_met": true
+          },
+          "cbor_stats": {
+            "total_compressions": 29,
+            "avg_compression_ratio": 0.5061347832426918,
+            "avg_latency": 0.08268191896635911,
+            "total_bytes_saved": 4190,
+            "target_ratio_met": true,
+            "target_latency_met": true
+          }
+        }
+      },
+      {
+        "node_id": 5,
+        "uptime": 0.028420209884643555,
+        "position": {
+          "latitude": 40.70397603654252,
+          "longitude": -74.00042459776182,
+          "altitude": 92.62654385067358
+        },
+        "velocity": {
+          "x": -5.072580374155646,
+          "y": -7.98221758435804,
+          "z": -0.5696961856135081,
+          "speed": 9.474778253880473
+        },
+        "battery": 99.50000000000045,
+        "status": "active",
+        "beacons_sent": 29,
+        "beacons_received": 17,
+        "transactions_created": 16,
+        "consensus_rounds": 5,
+        "neighbors": 0,
+        "neighbor_ids": [],
+        "beacon_performance": {
+          "total_beacons": 29,
+          "avg_beacon_size": 159.44827586206895,
+          "avg_trailer_size": 12.0,
+          "avg_compression_ratio": 0.5046052013245784,
+          "avg_total_latency": 0.09040174813106142,
+          "target_latency_met": true,
+          "target_trailer_met": true,
+          "blockchain_stats": {
+            "total_operations": 16,
+            "total_blocks": 17,
+            "avg_add_latency": 0.01455843448638916,
+            "avg_verify_latency": 0.0,
+            "chain_valid": true,
+            "session_mac_cpu_reduction": 89.98060762766644,
+            "session_mac_target_met": true
+          },
+          "milestone_stats": {
+            "total_operations": 104,
+            "avg_encode_latency": 0.0009125676648370151,
+            "avg_decode_latency": 0.0013042898739085479,
+            "avg_trailer_latency": 0.002926793591729526,
+            "dag_tips_tracked": 5,
+            "trailer_size_bytes": 12,
+            "target_latency_met": true
+          },
+          "cbor_stats": {
+            "total_compressions": 29,
+            "avg_compression_ratio": 0.5046052013245784,
+            "avg_latency": 0.07891654968261719,
+            "total_bytes_saved": 4198,
+            "target_ratio_met": true,
+            "target_latency_met": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "config": {
+      "num_uavs": 10,
+      "simulation_duration": 30.0,
+      "communication_range": 500.0,
+      "beacon_interval": 1.0
+    },
+    "execution": {
+      "execution_time": 0.05696296691894531,
+      "simulation_duration": 30.0,
+      "time_steps": 300
+    },
+    "network": {
+      "total_beacons_sent": 290,
+      "total_beacons_received": 318,
+      "packet_delivery_ratio": 1.096551724137931,
+      "avg_neighbors": 1.2,
+      "total_transactions": 167,
+      "consensus_rounds": 5
+    },
+    "performance": {
+      "avg_beacon_latency": 0.08101545531174233,
+      "avg_beacon_size": 159.4344827586207,
+      "avg_compression_ratio": 0.504520672558799,
+      "avg_chain_length": 17.7,
+      "avg_cpu_reduction": 89.96542805565363
+    },
+    "nodes": [
+      {
+        "node_id": 1,
+        "uptime": 0.05832505226135254,
+        "position": {
+          "latitude": 40.71342733547758,
+          "longitude": -73.99992090057344,
+          "altitude": 140.26169070273974
+        },
+        "velocity": {
+          "x": 7.913956756767007,
+          "y": 6.520437131079216,
+          "z": -1.8080795200285542,
+          "speed": 10.412298664515987
+        },
+        "battery": 99.50000000000045,
+        "status": "active",
+        "beacons_sent": 29,
+        "beacons_received": 28,
+        "transactions_created": 13,
+        "consensus_rounds": 5,
+        "neighbors": 1,
+        "neighbor_ids": [
+          10
+        ],
+        "beacon_performance": {
+          "total_beacons": 29,
+          "avg_beacon_size": 159.55172413793105,
+          "avg_trailer_size": 12.0,
+          "avg_compression_ratio": 0.5071152335349018,
+          "avg_total_latency": 0.10288172754748114,
+          "target_latency_met": true,
+          "target_trailer_met": true,
+          "blockchain_stats": {
+            "total_operations": 13,
+            "total_blocks": 14,
+            "avg_add_latency": 0.014580213106595553,
+            "avg_verify_latency": 0.0,
+            "chain_valid": true,
+            "session_mac_cpu_reduction": 88.77551020408164,
+            "session_mac_target_met": true
+          },
+          "milestone_stats": {
+            "total_operations": 115,
+            "avg_encode_latency": 0.0011838715651939656,
+            "avg_decode_latency": 0.0005023820059640067,
+            "avg_trailer_latency": 0.004110665156923491,
+            "dag_tips_tracked": 5,
+            "trailer_size_bytes": 12,
+            "target_latency_met": true
+          },
+          "cbor_stats": {
+            "total_compressions": 29,
+            "avg_compression_ratio": 0.5071152335349018,
+            "avg_latency": 0.08796823435816271,
+            "total_bytes_saved": 4159,
+            "target_ratio_met": true,
+            "target_latency_met": true
+          }
+        }
+      },
+      {
+        "node_id": 2,
+        "uptime": 0.05848836898803711,
+        "position": {
+          "latitude": 40.721172479272475,
+          "longitude": -74.00002777437638,
+          "altitude": 59.19873795221003
+        },
+        "velocity": {
+          "x": -3.3405360186092503,
+          "y": 9.514162507277433,
+          "z": -0.9571219759194651,
+          "speed": 10.12889685914993
+        },
+        "battery": 99.50000000000045,
+        "status": "active",
+        "beacons_sent": 29,
+        "beacons_received": 0,
+        "transactions_created": 18,
+        "consensus_rounds": 5,
+        "neighbors": 0,
+        "neighbor_ids": [],
+        "beacon_performance": {
+          "total_beacons": 29,
+          "avg_beacon_size": 159.27586206896552,
+          "avg_trailer_size": 12.0,
+          "avg_compression_ratio": 0.5033638313189468,
+          "avg_total_latency": 0.0853949579699286,
+          "target_latency_met": true,
+          "target_trailer_met": true,
+          "blockchain_stats": {
+            "total_operations": 18,
+            "total_blocks": 19,
+            "avg_add_latency": 0.014967388576931424,
+            "avg_verify_latency": 0.0,
+            "chain_valid": true,
+            "session_mac_cpu_reduction": 90.57258530942742,
+            "session_mac_target_met": true
+          },
+          "milestone_stats": {
+            "total_operations": 87,
+            "avg_encode_latency": 0.0010769942711139548,
+            "avg_decode_latency": 0.0,
+            "avg_trailer_latency": 0.003477622722757274,
+            "dag_tips_tracked": 5,
+            "trailer_size_bytes": 12,
+            "target_latency_met": true
+          },
+          "cbor_stats": {
+            "total_compressions": 29,
+            "avg_compression_ratio": 0.5033638313189468,
+            "avg_latency": 0.07231482144059806,
+            "total_bytes_saved": 4214,
+            "target_ratio_met": true,
+            "target_latency_met": true
+          }
+        }
+      },
+      {
+        "node_id": 3,
+        "uptime": 0.058704376220703125,
+        "position": {
+          "latitude": 40.71805254876005,
+          "longitude": -74.01353314623275,
+          "altitude": 92.95997417576397
+        },
+        "velocity": {
+          "x": -2.594452812872521,
+          "y": -0.5727348036594613,
+          "z": -0.1358972842591477,
+          "speed": 2.6603906903712446
+        },
+        "battery": 99.50000000000045,
+        "status": "active",
+        "beacons_sent": 29,
+        "beacons_received": 15,
+        "transactions_created": 19,
+        "consensus_rounds": 5,
+        "neighbors": 1,
+        "neighbor_ids": [
+          9
+        ],
+        "beacon_performance": {
+          "total_beacons": 29,
+          "avg_beacon_size": 159.72413793103448,
+          "avg_trailer_size": 12.0,
+          "avg_compression_ratio": 0.5034114298974826,
+          "avg_total_latency": 0.07960714142898033,
+          "target_latency_met": true,
+          "target_trailer_met": true,
+          "blockchain_stats": {
+            "total_operations": 19,
+            "total_blocks": 20,
+            "avg_add_latency": 0.013238505313270971,
+            "avg_verify_latency": 0.0,
+            "chain_valid": true,
+            "session_mac_cpu_reduction": 90.82417582417582,
+            "session_mac_target_met": true
+          },
+          "milestone_stats": {
+            "total_operations": 102,
+            "avg_encode_latency": 0.000961895646720097,
+            "avg_decode_latency": 0.0005404154459635416,
+            "avg_trailer_latency": 0.0030583348767510778,
+            "dag_tips_tracked": 5,
+            "trailer_size_bytes": 12,
+            "target_latency_met": true
+          },
+          "cbor_stats": {
+            "total_compressions": 29,
+            "avg_compression_ratio": 0.5034114298974826,
+            "avg_latency": 0.06745601522511449,
+            "total_bytes_saved": 4226,
+            "target_ratio_met": true,
+            "target_latency_met": true
+          }
+        }
+      },
+      {
+        "node_id": 4,
+        "uptime": 0.05892324447631836,
+        "position": {
+          "latitude": 40.70469561542029,
+          "longitude": -74.0108316334727,
+          "altitude": 73.95692498829395
+        },
+        "velocity": {
+          "x": -6.160101868072578,
+          "y": 5.313970180539634,
+          "z": -0.6856661187432165,
+          "speed": 8.164268009508758
+        },
+        "battery": 99.50000000000045,
+        "status": "active",
+        "beacons_sent": 29,
+        "beacons_received": 63,
+        "transactions_created": 15,
+        "consensus_rounds": 5,
+        "neighbors": 2,
+        "neighbor_ids": [
+          6,
+          7
+        ],
+        "beacon_performance": {
+          "total_beacons": 29,
+          "avg_beacon_size": 159.58620689655172,
+          "avg_trailer_size": 12.0,
+          "avg_compression_ratio": 0.5059752618633664,
+          "avg_total_latency": 0.07920429624360183,
+          "target_latency_met": true,
+          "target_trailer_met": true,
+          "blockchain_stats": {
+            "total_operations": 15,
+            "total_blocks": 16,
+            "avg_add_latency": 0.012938181559244791,
+            "avg_verify_latency": 0.0,
+            "chain_valid": true,
+            "session_mac_cpu_reduction": 89.62912087912088,
+            "session_mac_target_met": true
+          },
+          "milestone_stats": {
+            "total_operations": 150,
+            "avg_encode_latency": 0.0008714610132677801,
+            "avg_decode_latency": 0.0005449567522321429,
+            "avg_trailer_latency": 0.0029925642342403017,
+            "dag_tips_tracked": 5,
+            "trailer_size_bytes": 12,
+            "target_latency_met": true
+          },
+          "cbor_stats": {
+            "total_compressions": 29,
+            "avg_compression_ratio": 0.5059752618633664,
+            "avg_latency": 0.06725870329758217,
+            "total_bytes_saved": 4179,
+            "target_ratio_met": true,
+            "target_latency_met": true
+          }
+        }
+      },
+      {
+        "node_id": 5,
+        "uptime": 0.059159278869628906,
+        "position": {
+          "latitude": 40.72058420315015,
+          "longitude": -74.0082661833532,
+          "altitude": 145.53211182250013
+        },
+        "velocity": {
+          "x": 4.383087668406544,
+          "y": -5.612186487129776,
+          "z": -1.5666058872074426,
+          "speed": 7.291251516790008
+        },
+        "battery": 99.50000000000045,
+        "status": "active",
+        "beacons_sent": 29,
+        "beacons_received": 29,
+        "transactions_created": 17,
+        "consensus_rounds": 5,
+        "neighbors": 1,
+        "neighbor_ids": [
+          9
+        ],
+        "beacon_performance": {
+          "total_beacons": 29,
+          "avg_beacon_size": 158.93103448275863,
+          "avg_trailer_size": 12.0,
+          "avg_compression_ratio": 0.5042701026341808,
+          "avg_total_latency": 0.07782311275087554,
+          "target_latency_met": true,
+          "target_trailer_met": true,
+          "blockchain_stats": {
+            "total_operations": 17,
+            "total_blocks": 18,
+            "avg_add_latency": 0.013674006742589614,
+            "avg_verify_latency": 0.0,
+            "chain_valid": true,
+            "session_mac_cpu_reduction": 90.29304029304029,
+            "session_mac_target_met": true
+          },
+          "milestone_stats": {
+            "total_operations": 116,
+            "avg_encode_latency": 0.0008714610132677801,
+            "avg_decode_latency": 0.0005343864704000538,
+            "avg_trailer_latency": 0.002852801618904903,
+            "dag_tips_tracked": 5,
+            "trailer_size_bytes": 12,
+            "target_latency_met": true
+          },
+          "cbor_stats": {
+            "total_compressions": 29,
+            "avg_compression_ratio": 0.5042701026341808,
+            "avg_latency": 0.06580352783203125,
+            "total_bytes_saved": 4189,
+            "target_ratio_met": true,
+            "target_latency_met": true
+          }
+        }
+      },
+      {
+        "node_id": 6,
+        "uptime": 0.05935239791870117,
+        "position": {
+          "latitude": 40.70495749043588,
+          "longitude": -74.00789723728643,
+          "altitude": 142.90896926506127
+        },
+        "velocity": {
+          "x": -9.118471258732077,
+          "y": -4.955537955937244,
+          "z": -1.7169415037052476,
+          "speed": 10.519114157390025
+        },
+        "battery": 99.50000000000045,
+        "status": "active",
+        "beacons_sent": 29,
+        "beacons_received": 16,
+        "transactions_created": 10,
+        "consensus_rounds": 5,
+        "neighbors": 1,
+        "neighbor_ids": [
+          4
+        ],
+        "beacon_performance": {
+          "total_beacons": 29,
+          "avg_beacon_size": 159.48275862068965,
+          "avg_trailer_size": 12.0,
+          "avg_compression_ratio": 0.5043114346400325,
+          "avg_total_latency": 0.07577600150272765,
+          "target_latency_met": true,
+          "target_trailer_met": true,
+          "blockchain_stats": {
+            "total_operations": 10,
+            "total_blocks": 11,
+            "avg_add_latency": 0.012183189392089844,
+            "avg_verify_latency": 0.0,
+            "chain_valid": true,
+            "session_mac_cpu_reduction": 86.91308691308691,
+            "session_mac_target_met": true
+          },
+          "milestone_stats": {
+            "total_operations": 103,
+            "avg_encode_latency": 0.0009125676648370151,
+            "avg_decode_latency": 0.0007003545761108398,
+            "avg_trailer_latency": 0.0029021296007879847,
+            "dag_tips_tracked": 5,
+            "trailer_size_bytes": 12,
+            "target_latency_met": true
+          },
+          "cbor_stats": {
+            "total_compressions": 29,
+            "avg_compression_ratio": 0.5043114346400325,
+            "avg_latency": 0.0644305656696188,
+            "total_bytes_saved": 4204,
+            "target_ratio_met": true,
+            "target_latency_met": true
+          }
+        }
+      },
+      {
+        "node_id": 7,
+        "uptime": 0.05942344665527344,
+        "position": {
+          "latitude": 40.70602862497679,
+          "longitude": -74.01386372396396,
+          "altitude": 77.34339441784485
+        },
+        "velocity": {
+          "x": -5.553914067604917,
+          "y": -2.689735076904622,
+          "z": -1.089522118957412,
+          "speed": 6.2663940749021165
+        },
+        "battery": 99.50000000000045,
+        "status": "active",
+        "beacons_sent": 29,
+        "beacons_received": 53,
+        "transactions_created": 19,
+        "consensus_rounds": 5,
+        "neighbors": 2,
+        "neighbor_ids": [
+          4,
+          8
+        ],
+        "beacon_performance": {
+          "total_beacons": 29,
+          "avg_beacon_size": 159.82758620689654,
+          "avg_trailer_size": 12.0,
+          "avg_compression_ratio": 0.5067430395628039,
+          "avg_total_latency": 0.07710785701357085,
+          "target_latency_met": true,
+          "target_trailer_met": true,
+          "blockchain_stats": {
+            "total_operations": 19,
+            "total_blocks": 20,
+            "avg_add_latency": 0.013476923892372534,
+            "avg_verify_latency": 0.0,
+            "chain_valid": true,
+            "session_mac_cpu_reduction": 90.82417582417582,
+            "session_mac_target_met": true
+          },
+          "milestone_stats": {
+            "total_operations": 140,
+            "avg_encode_latency": 0.0008714610132677801,
+            "avg_decode_latency": 0.0005713048970924234,
+            "avg_trailer_latency": 0.002852801618904903,
+            "dag_tips_tracked": 5,
+            "trailer_size_bytes": 12,
+            "target_latency_met": true
+          },
+          "cbor_stats": {
+            "total_compressions": 29,
+            "avg_compression_ratio": 0.5067430395628039,
+            "avg_latency": 0.06586107714422818,
+            "total_bytes_saved": 4173,
+            "target_ratio_met": true,
+            "target_latency_met": true
+          }
+        }
+      },
+      {
+        "node_id": 8,
+        "uptime": 0.05964207649230957,
+        "position": {
+          "latitude": 40.70527683000238,
+          "longitude": -74.0155692077171,
+          "altitude": 105.40579871839698
+        },
+        "velocity": {
+          "x": 8.242578015042241,
+          "y": 0.8171504704276344,
+          "z": 0.6640780949092355,
+          "speed": 8.309562379663328
+        },
+        "battery": 99.50000000000045,
+        "status": "active",
+        "beacons_sent": 29,
+        "beacons_received": 42,
+        "transactions_created": 18,
+        "consensus_rounds": 5,
+        "neighbors": 1,
+        "neighbor_ids": [
+          7
+        ],
+        "beacon_performance": {
+          "total_beacons": 29,
+          "avg_beacon_size": 158.6206896551724,
+          "avg_trailer_size": 12.0,
+          "avg_compression_ratio": 0.5045156552580995,
+          "avg_total_latency": 0.07785599807213092,
+          "target_latency_met": true,
+          "target_trailer_met": true,
+          "blockchain_stats": {
+            "total_operations": 18,
+            "total_blocks": 19,
+            "avg_add_latency": 0.012675921122233072,
+            "avg_verify_latency": 0.0,
+            "chain_valid": true,
+            "session_mac_cpu_reduction": 90.57258530942742,
+            "session_mac_target_met": true
+          },
+          "milestone_stats": {
+            "total_operations": 129,
+            "avg_encode_latency": 0.0009207889951508621,
+            "avg_decode_latency": 0.0005619866507393974,
+            "avg_trailer_latency": 0.002926793591729526,
+            "dag_tips_tracked": 5,
+            "trailer_size_bytes": 12,
+            "target_latency_met": true
+          },
+          "cbor_stats": {
+            "total_compressions": 29,
+            "avg_compression_ratio": 0.5045156552580995,
+            "avg_latency": 0.06642834893588362,
+            "total_bytes_saved": 4176,
+            "target_ratio_met": true,
+            "target_latency_met": true
+          }
+        }
+      },
+      {
+        "node_id": 9,
+        "uptime": 0.059854745864868164,
+        "position": {
+          "latitude": 40.718499776433504,
+          "longitude": -74.00979105540858,
+          "altitude": 67.95762664582286
+        },
+        "velocity": {
+          "x": 7.519317149924639,
+          "y": -5.0965042733775086,
+          "z": 1.8578808650977257,
+          "speed": 9.271796347990085
+        },
+        "battery": 99.50000000000045,
+        "status": "active",
+        "beacons_sent": 29,
+        "beacons_received": 44,
+        "transactions_created": 15,
+        "consensus_rounds": 5,
+        "neighbors": 2,
+        "neighbor_ids": [
+          3,
+          5
+        ],
+        "beacon_performance": {
+          "total_beacons": 29,
+          "avg_beacon_size": 159.86206896551724,
+          "avg_trailer_size": 12.0,
+          "avg_compression_ratio": 0.5058478427603355,
+          "avg_total_latency": 0.07755180885051859,
+          "target_latency_met": true,
+          "target_trailer_met": true,
+          "blockchain_stats": {
+            "total_operations": 15,
+            "total_blocks": 16,
+            "avg_add_latency": 0.014082590738932291,
+            "avg_verify_latency": 0.0,
+            "chain_valid": true,
+            "session_mac_cpu_reduction": 89.62912087912088,
+            "session_mac_target_met": true
+          },
+          "milestone_stats": {
+            "total_operations": 131,
+            "avg_encode_latency": 0.0008139117010708513,
+            "avg_decode_latency": 0.0006339766762473366,
+            "avg_trailer_latency": 0.00286102294921875,
+            "dag_tips_tracked": 5,
+            "trailer_size_bytes": 12,
+            "target_latency_met": true
+          },
+          "cbor_stats": {
+            "total_compressions": 29,
+            "avg_compression_ratio": 0.5058478427603355,
+            "avg_latency": 0.06605838907176051,
+            "total_bytes_saved": 4189,
+            "target_ratio_met": true,
+            "target_latency_met": true
+          }
+        }
+      },
+      {
+        "node_id": 10,
+        "uptime": 0.060079336166381836,
+        "position": {
+          "latitude": 40.714118623081696,
+          "longitude": -73.99784057036962,
+          "altitude": 132.5130671797151
+        },
+        "velocity": {
+          "x": -1.3084728538922192,
+          "y": 1.7833247814286395,
+          "z": 1.5773949586523117,
+          "speed": 2.71671186197802
+        },
+        "battery": 99.50000000000045,
+        "status": "active",
+        "beacons_sent": 29,
+        "beacons_received": 28,
+        "transactions_created": 23,
+        "consensus_rounds": 5,
+        "neighbors": 1,
+        "neighbor_ids": [
+          1
+        ],
+        "beacon_performance": {
+          "total_beacons": 29,
+          "avg_beacon_size": 159.48275862068965,
+          "avg_trailer_size": 12.0,
+          "avg_compression_ratio": 0.49965289411783986,
+          "avg_total_latency": 0.07695165173760776,
+          "target_latency_met": true,
+          "target_trailer_met": true,
+          "blockchain_stats": {
+            "total_operations": 23,
+            "total_blocks": 24,
+            "avg_add_latency": 0.011558118073836617,
+            "avg_verify_latency": 0.0,
+            "chain_valid": true,
+            "session_mac_cpu_reduction": 91.62087912087912,
+            "session_mac_target_met": true
+          },
+          "milestone_stats": {
+            "total_operations": 115,
+            "avg_encode_latency": 0.0008879036738954741,
+            "avg_decode_latency": 0.0011069434029715402,
+            "avg_trailer_latency": 0.00294323625235722,
+            "dag_tips_tracked": 5,
+            "trailer_size_bytes": 12,
+            "target_latency_met": true
+          },
+          "cbor_stats": {
+            "total_compressions": 29,
+            "avg_compression_ratio": 0.49965289411783986,
+            "avg_latency": 0.06558155191355738,
+            "total_bytes_saved": 4283,
+            "target_ratio_met": true,
+            "target_latency_met": true
+          }
+        }
+      }
+    ]
+  }
+]
