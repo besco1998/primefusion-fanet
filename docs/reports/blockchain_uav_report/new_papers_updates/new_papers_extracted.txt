@@ -1,0 +1,505 @@
+=== drones-09-00590-v2.pdf ===
+drones
+Article
+
+iBANDA: A Blockchain-Assisted Defense System for
+Authentication in Drone-Based Logistics †
+Simeon Okechukwu Ajakwe *,‡ , Ikechi Saviour Igboanusi ‡ , Jae-Min Lee
+
+and Dong-Seong Kim *
+
+Department of IT Convergence Engineering, Kumoh National Institute of Technology, Gumi 39177, Republic of Korea;
+ikechisaviour@kumoh.ac.kr (I.S.I.); ljmpaul@kumoh.ac.kr (J.-M.L.)
+* Correspondence: simeonajlove@gmail.com (S.O.A.); dskim@kumoh.ac.kr (D.-S.K.)
+† This paper is an extended version of our conference paper: BANDA: A Novel Blockchain-Assisted Network for
+Drone Authentication. In Proceedings of the Fourteenth International Conference on Ubiquitous and Future
+Networks (ICUFN), Paris, France, 4–7 July 2023.
+‡ Current address: ICT Convergence Research Centre, Kumoh National Institute of Technology, Gumi 39177,
+Republic of Korea.
+
+Abstract
+
+Academic Editors: Peiying Zhang
+and Athanasios V. Vasilakos
+Received: 23 July 2025
+Revised: 17 August 2025
+Accepted: 18 August 2025
+Published: 20 August 2025
+Citation: Ajakwe, S.O.; Igboanusi,
+I.S.; Lee, J.-M.; Kim, D.-S. iBANDA: A
+Blockchain-Assisted Defense System
+for Authentication in Drone-Based
+Logistics. Drones 2025, 9, 590.
+
+Background: The increasing deployment of unmanned aerial vehicles (UAVs) for logistics
+in smart cities presents pressing challenges related to identity spoofing, unauthorized
+payload transport, and airspace security. Existing drone defense systems (DDSs) struggle
+to verify both drone identity and payload authenticity in real time, while blockchainassisted solutions are often hindered by high latency and limited scalability. Methods:
+To address these challenges, we propose iBANDA, a blockchain- and AI-assisted DDS
+framework. The system integrates a lightweight You Only Look Once 5 small (YOLOv5s)
+object detection model with a Snowball-based Proof-of-Stake consensus mechanism to
+enable dual-layer authentication of drones and their attached payloads. Authentication
+processes are coordinated through an edge-deployable decentralized application (DApp).
+Results: The experimental evaluation demonstrates that iBANDA achieves a mean average
+precision of 99.5%, recall of 100%, and an F1-score of 99.8% at an inference time of 0.021 s,
+validating its suitability for edge devices. Blockchain integration achieved an average
+network latency of 97.7 ms and an end-to-end transaction latency of 1.6 s, outperforming
+Goerli, Sepolia, and Polygon Mumbai testnets in scalability and throughput. Adversarial
+testing further confirmed resilience to Sybil attacks and GPS spoofing, maintaining a false
+acceptance rate below 2.5% and continuity above 96%. Conclusions: iBANDA demonstrates
+that combining AI-based visual detection with blockchain consensus provides a secure, lowlatency, and scalable authentication mechanism for UAV-based logistics. Future work will
+explore large-scale deployment in heterogeneous UAV networks and formal verification of
+smart contracts to strengthen resilience in safety-critical environments.
+Keywords: anti-drone; decentralized application; smart contract; AI-on-edge; secure drone
+delivery; DDS; PoS
+
+https://doi.org/10.3390/
+drones9080590
+Copyright: © 2025 by the authors.
+Licensee MDPI, Basel, Switzerland.
+This article is an open access article
+distributed under the terms and
+conditions of the Creative Commons
+Attribution (CC BY) license
+(https://creativecommons.org/
+licenses/by/4.0/).
+
+Drones 2025, 9, 590
+
+1. Introduction
+Drone use for priority-based logistics has become increasingly popular in recent
+years [1]. However, several security concerns jeopardize the viability of civilian drone
+use [2]. Lately, there have been multiple accounts of heightened interference and airspace
+breaches due to the controversies surrounding drone use and its offspring, also referred
+to as unmanned aerial vehicles (UAVs) [3]. Data from the US Federal Aviation Authority
+
+https://doi.org/10.3390/drones9080590
+
+Drones 2025, 9, 590
+
+2 of 30
+
+(FAA) reveals that between January 2016 and December 2022, a total of 14,178 incidents
+involving UAV-related airspace security violations occurred across the country [4]. This
+statistic represents nearly a 200% increase compared to the 8124 cases reported in 2015 [3].
+Drone defense systems (DDSs) are cyber–physical systems (CPSs) that operate in hard
+real-time over fault-tolerant networks (FTNs) to oversee and monitor drone operations
+and activities against invasive and malicious uses, including espionage, network jamming,
+retaliation attacks, and spying [5].
+Despite advancements in DDS technologies, several security challenges persist in
+drone operations, particularly within logistics. These include verifying and ensuring accountability in drone package delivery [6]; managing drone user identity theft [7]; preventing drone communication hijacking; ensuring drone user authentication [8,9]; authorizing
+drone operators [10]; and enabling dynamic drone engagement and neutralization based
+on environmental impact assessments [5]. Specifically, payload security, which entails the
+timely verification of drone identity and cargo ownership, is critical to curtail identity theft,
+smuggling, and the risk of nuclear weapon carriage, among other threats, and maintain air
+freight security [11]. These challenges imply that the deployment of artificial intelligence
+(AI)-driven defense strategies to ensure safe and secure drone-based logistics may not be as
+effective as they could be [5,12], particularly when it comes to anonymity concerns brought
+on by flaws in current security architectures. Thus, the intelligence and integrity of UAV
+defense systems depend largely on the underlying cognitive and cybersecurity models,
+which serve as both eyes and brains to perceive and respond to the myriad of drone-based
+logistic scenarios around them and within their network.
+=== drones-09-00654-v2.pdf ===
+Article
+
+A Lightweight and Dynamic Authentication Scheme Based on
+Blockchain and aSVC for UAV Swarm
+Jianbo Jiao 1 , Bing Chen 1, * , Feng Hu 1 and Yunkun Wu 2
+1
+
+2
+
+*
+
+The College of Computer Science and Technology, Nanjing University of Aeronautics and Astronautics,
+Nanjing 210016, China; jiaojb@nuaa.edu.cn (J.J.); huf@nuaa.edu.cn (F.H.)
+QI-ANXIN Technology Research Institute, Beijing 100044, China; wuyunkun@qianxin.com
+Correspondence: cb_china@nuaa.edu.cn
+
+Abstract
+The rapid development of Unmanned Aerial Vehicle (UAV) swarm technology has led
+to its increasingly vital role in intelligent transportation, environmental monitoring, and
+emergency response. However, existing centralized identity authentication mechanisms
+are susceptible to single points of failure and identity forgery in dynamic environments.
+While blockchain technology offers a distributed trust architecture, its inherent high storage
+and computational overhead pose significant challenges for resource-constrained UAV networks. To mitigate these challenges, this paper introduces a novel lightweight and dynamic
+identity authentication scheme that integrates blockchain with aggregatable subvector commitments (aSVC). This proposed scheme employs aSVC to effectively compress identity
+states, complemented by efficient batch authentication and asynchronous update mechanisms. Consequently, this approach reduces on-chain storage overhead to a constant level
+and achieves a statistically significant optimization of the computational complexity for
+batch authentication, transforming key cryptographic operations from linear dependence
+on the number of UAVs to a constant level.
+Keywords: UAV swarm; blockchain; aggregatable subvector commitments; lightweight
+authentication; dynamic identity management
+
+Academic Editor: Dawei Wang
+Received: 28 July 2025
+Revised: 11 September 2025
+Accepted: 15 September 2025
+Published: 17 September 2025
+Citation: Jiao, J.; Chen, B.; Hu, F.; Wu,
+Y. A Lightweight and Dynamic
+Authentication Scheme Based on
+Blockchain and aSVC for UAV Swarm.
+Drones 2025, 9, 654. https://doi.org/
+10.3390/drones9090654
+Copyright: © 2025 by the authors.
+Licensee MDPI, Basel, Switzerland.
+This article is an open access article
+distributed under the terms and
+conditions of the Creative Commons
+Attribution (CC BY) license
+(https://creativecommons.org/
+licenses/by/4.0/).
+
+Drones 2025, 9, 654
+
+1. Introduction
+In recent years, rapid advancements in unmanned system technology have positioned
+UAVs, with their flexible deployment and excellent environmental adaptability, as crucial infrastructure in aerospace information networks [1–3]. Particularly in fields such as
+intelligent transportation, environmental monitoring, emergency response, and logistics
+delivery, collaborative operation models represented by UAV swarms are progressively
+transforming traditional operational paradigms [4]. UAV swarms, through heterogeneous
+networking, can accomplish tasks such as large-scale data collection, complex area inspection, and rapid response rescue, significantly enhancing operational efficiency and
+coverage [5,6]. However, the widespread application of UAV swarms also introduces new
+security challenges and technical bottlenecks: on the one hand, open communication links
+are vulnerable to electromagnetic interference and network attacks, and node identities can
+be easily forged [7]; on the other hand, frequent changes in dynamic topological structures
+increase collaborative authentication delays and energy consumption [8]. Furthermore,
+UAV nodes have limited resources, while traditional blockchain’s storage requirements
+are extremely high, a contradiction that further restricts the practical implementation of
+
+https://doi.org/10.3390/drones9090654
+
+Drones 2025, 9, 654
+
+2 of 28
+
+blockchain technology [9]. The aforementioned issues can lead to the proliferation of
+Byzantine nodes within the UAV swarm network, potentially causing task decision failures
+or even the collapse of the entire system. Therefore, designing a lightweight, resilient,
+and distributed identity authentication and trust system becomes a critical prerequisite for
+achieving reliable collaboration within UAV swarms.
+UAV swarms typically adopt a self-organizing network form, completing collaborative
+decisions and data sharing through inter-node cooperation [10,11]. In this process, the issue
+of identity authentication between nodes is paramount, as it directly impacts the security
+and reliability of data transmission. Traditional identity authentication schemes primarily
+rely on Public Key Infrastructure (PKI) technology [12]. PKI schemes usually issue digital
+certificates containing unique identifiers and public keys through a centralized Certificate
+Authority (CA) and rely on periodic updates to maintain communication privileges [13].
+Although the PKI architecture performs well in static networks, it still has significant
+shortcomings in UAV swarm environments: firstly, the CA, as a centralized trust source, is
+vulnerable to Distributed Denial of Service (DDoS) attacks or insider attacks, which can
+lead to the paralysis of the entire identity authentication system [14]; secondly, to meet the
+demand for anonymous communication, UAVs must pre-store a large amount of certificate
+information, resulting in substantial storage overhead; finally, in dynamic topological
+environments, frequent issuance, updating, and revocation of certificates lead to a surge in
+management complexity and are prone to node state conflicts and synchronization delays.
+Blockchain technology, as an emerging distributed ledger technology, offers a new
+solution for identity authentication in UAV networks due to its decentralization, immutability, and traceability [15]. However, directly integrating traditional blockchain technology
+into UAV networks still confronts two fundamental bottlenecks:
+
+•
+
+=== sensors-24-07813.pdf ===
+Article
+
+Blockchain Integration in UAV Networks: Performance Metrics
+and Analysis
+Md Imran Hossain 1,∗ , Murat Tahtali 2 , Ugur Turhan 3 and Kamanashis Biswas 4,5, *
+1
+2
+
+3
+4
+5
+
+*
+
+School of Systems & Computing, University of New South Wales, Canberra, ACT 2600, Australia
+School of Engineering & Technology, University of New South Wales, Canberra, ACT 2600, Australia;
+murat@unsw.edu.au
+School of Science, University of New South Wales, Canberra, ACT 2600, Australia; u.turhan@unsw.edu.au
+Peter Faber Business School, Australian Catholic University, Brisbane, QLD 4014, Australia
+Department of Computer Science and Engineering, Daffodil International University,
+Dhaka 1216, Bangladesh
+Correspondence: md_imran.hossain@unsw.edu.au or mihcou@gmail.com (M.I.H.);
+kamanashis.biswas@acu.edu.au (K.B.)
+
+Abstract: Blockchain technology has revolutionized the management of Unmanned Aerial Vehicle
+(UAV) networks by enhancing security, enabling decentralized control, and improving operational
+efficiency. This study assesses the efficiency of private blockchain architectures in UAV networks,
+specifically examining important performance metrics such as throughput, latency, scalability, and
+packet size. Furthermore, we evaluate the effectiveness of UAV networks when integrating private
+blockchain technologies, focusing particularly on key performance indicators such as area, altitude,
+and data rate. The scope of our work includes extensive simulations that employ a private blockchain
+to assess its impact on UAV operations. In the blockchain network, throughput decreased as the
+number of UAVs and transactions increased, while delay remained constant up to a certain point.
+In contrast, the UAV network saw improved throughput but increased delay with more UAVs and
+transactions. Changes in area and altitude had little impact on the blockchain network but increased
+delays in the UAV network. Higher data rates enhanced the UAV network by reducing latency
+and improving throughput, though this effect was less pronounced in the blockchain network. The
+aforementioned results highlight the potential and limitations of private blockchains in enhancing
+the durability and efficiency of UAV networks.
+Citation: Hossain, M.I.; Tahtali, M.;
+Turhan, U.; Biswas, K. Blockchain
+Integration in UAV Networks:
+
+Keywords: UAV; blockchain; throughput; latency; scalability; packet size
+
+Performance Metrics and Analysis.
+Sensors 2024, 24, 7813. https://
+doi.org/10.3390/s24237813
+Academic Editor: Hyoungshick Kim
+Received: 31 October 2024
+Revised: 4 December 2024
+Accepted: 4 December 2024
+Published: 6 December 2024
+
+Copyright: © 2024 by the authors.
+Licensee MDPI, Basel, Switzerland.
+This article is an open access article
+distributed under the terms and
+conditions of the Creative Commons
+Attribution (CC BY) license (https://
+creativecommons.org/licenses/by/
+
+1. Introduction
+Unmanned Aerial Vehicles, which are generally known as drones, have been widely
+integrated into various industries, including agriculture for crop monitoring, logistics for
+package delivery, surveillance for security purposes, and disaster management for search
+and rescue operations. As UAVs are versatile and efficient, they have the potential to be
+integrated into many aspects of our daily lives. Blockchain improves UAV networks by securing communications and enabling tamper-proof data exchange for military, airport, and
+border operations. It enables hangar surveillance, air traffic integration, and autonomous
+patrols. Blockchain enables delivery verification and optimum routes in the transportation
+services industry while encrypting data and automating resource allocation in agriculture.
+It coordinates logistics and assures responsibility in disaster assistance, while in urban
+air transportation, it oversees airspace and checks aircraft authorizations. However, to
+guarantee the flawless and secure operation of UAVs in those varieties of operations, they
+must have robust and efficient network management systems. This is due to the growing
+demand for their deployment.
+
+4.0/).
+
+Sensors 2024, 24, 7813. https://doi.org/10.3390/s24237813
+
+https://www.mdpi.com/journal/sensors
+
+Sensors 2024, 24, 7813
+
+2 of 22
+
+Existing UAV network management solutions are generally centralized, with Ground
+Control Stations (GCSs) organizing and monitoring UAV activities [1]. However, the
+centralized strategy, which relies solely on GCSs, offers a certain level of control but also
+presents significant challenges:
+•
+
+•
+
+•
+
+•
+
+Security Threats: Most centralized systems are vulnerable to single points of failure,
+=== sensors-25-05087.pdf ===
+Article
+
+Secure LoRa Drone-to-Drone Communication for Public
+Blockchain-Based UAV Traffic Management
+Jing Huey Khor 1 , Michail Sidorov 2, *
+1
+
+2
+
+*
+
+and Melissa Jia Ying Chong 1
+
+Connected Intelligence Group, University of Southampton Malaysia, Iskandar Puteri 79100, Johor, Malaysia;
+j.khor@soton.ac.uk (J.H.K.); m.j.y.chong@soton.ac.uk (M.J.Y.C.)
+School of Electrical and Electronic Engineering, University of Southampton Malaysia, Iskandar Puteri 79100,
+Johor, Malaysia
+Correspondence: m.sidorov@soton.ac.uk
+
+Highlights
+What are the main findings?
+
+•
+
+Efficient Drone-to-Drone communication protocol fusion with a blockchain network
+for the purpose of secure and efficient Unmanned Aerial Vehicle Traffic Management
+is presented.
+
+What is the implication of the main finding?
+
+•
+•
+
+Superior performance compared to state of the art.
+Lower computational and storage costs.
+
+Abstract
+
+Received: 14 July 2025
+Revised: 8 August 2025
+Accepted: 13 August 2025
+Published: 15 August 2025
+Citation: Khor, J.H.; Sidorov, M.;
+Chong, M.J.Y. Secure LoRa
+Drone-to-Drone Communication for
+Public Blockchain-Based UAV Traffic
+
+Unmanned Aerial Vehicles (UAVs) face collision risks due to Beyond Visual Line of Sight
+operations. Therefore, UAV Traffic Management (UTM) systems are used to manage and
+monitor UAV flight paths. However, centralized UTM systems are susceptible to various
+security attacks and are inefficient in managing flight data from different service providers.
+It further fails to provide low-latency communication required for UAV real-time operations.
+Thus, this paper proposes to integrate Drone-to-Drone (D2D) communication protocol into
+a secure public blockchain-based UTM system to enable direct communication between
+UAVs for efficient collision avoidance. The D2D protocol is designed using SHA256 hash
+function and bitwise XOR operations. A proof of concept has been built to verify that the
+UTM system is secure by enabling authorized service providers to view sensitive flight
+data only using legitimate secret keys. The security of the protocol has been analyzed and
+has been proven to be secure from key disclosure, adversary-in-the-middle, replay, and
+tracking attacks. Its performance has been evaluated and is proven to outperform existing
+studies by having the lowest computation cost of 0.01 ms and storage costs of 544–800 bits.
+Keywords: blockchain; D2D; protocol; UAV; UTM
+
+Management. Sensors 2025, 25, 5087.
+https://doi.org/10.3390/s25165087
+Copyright: © 2025 by the authors.
+Licensee MDPI, Basel, Switzerland.
+This article is an open access article
+distributed under the terms and
+conditions of the Creative Commons
+Attribution (CC BY) license
+(https://creativecommons.org/
+licenses/by/4.0/).
+
+Sensors 2025, 25, 5087
+
+1. Introduction
+Beyond Visual Line of Sight (BVLOS) operation of Unmanned Aerial Vehicles (UAVs),
+i.e., operation conducted outside of the direct visual range of the pilot, significantly enhances the capabilities of UAVs by allowing them to operate and perform tasks well beyond
+the direct line of sight of the operator. This, however, introduces additional challenges.
+BVLOS flights pose collision risks due to the lack of direct visual guidance and increased
+
+https://doi.org/10.3390/s25165087
+
+Sensors 2025, 25, 5087
+
+2 of 18
+
+vulnerability to environmental factors such as adverse weather, rogue drones, birds, etc. To
+address these risks, researchers have integrated high-speed cameras [1], LiDAR [2], radar
+systems [3], and radio frequency-based methods [4] for detecting obstacles and potentially
+malicious drones. However, effective UAV traffic monitoring goes beyond local sensing
+and requires coordinated tracking and information sharing among UAVs.
+To enable safe and efficient UAV operations, a robust UAV Traffic Management (UTM)
+system is essential. Remote Identification (RID) plays a crucial role in this framework
+by enabling authorities and the public to identify UAVs and access flight data in realtime. While RID improves transparency, it also introduces serious privacy and security
+risks by making UAV identities and locations publicly visible [4,5]. Furthermore, current
+UTMs are typically centralized, making them susceptible to single points of failure, data
+tampering, and unauthorized access. These systems are unable to ensure secure and
+efficient interactions between service providers and end-users.
+=== drones-09-00334.pdf ===
+Article
+
+Performance Analysis of Blockchain Consensus Algorithm in
+Unmanned Aerial Vehicle Ad Hoc Networks
+Xuan Huang and Dongyan Huang *
+School of Information and Communication, Guilin University of Electronic Technology, Guilin 541004, China;
+huangxuan@mails.guet.edu.cn
+* Correspondence: huangdongyan@guet.edu.cn
+
+Abstract: Blockchain technology is a competitive solution to address the prevailing data
+security concerns in unmanned aerial vehicle (UAV) networks. However, wireless communication links between UAV nodes are vulnerable to electromagnetic interference and
+competition due to limited spectrum resources. Consequently, a comprehensive analysis of
+blockchain performance within UAV network environments is imperative for the effective
+deployment and optimization of blockchain technology. This paper presents two theoretical
+models. The first model assesses the impact of the Carrier Sense Multiple Access with
+Collision Avoid (CSMA/CA) channel access protocol on the latency and throughput of
+the chained HotStuff consensus algorithm. The second model considers the movement
+characteristics of UAV nodes in three-dimensional space and the complexity of the communication environment. The aim of the second model is to calculate the consensus failure
+probability of UAV networks under electromagnetic interference. The results demonstrate
+that the theoretical values closely match the actual simulation outcomes.
+Keywords: blockchain; UAV ad hoc network; chained HotStuff consensus algorithm;
+electromagnetic interference; performance analysis
+
+Academic Editors: Bing Chen,
+Changyan Yi, Kun Zhu, Yutao Jiao
+and Zhiyi Tian
+Received: 13 March 2025
+Revised: 22 April 2025
+Accepted: 23 April 2025
+Published: 25 April 2025
+Citation: Huang, X.; Huang, D.
+Performance Analysis of Blockchain
+Consensus Algorithm in Unmanned
+Aerial Vehicle Ad Hoc Networks.
+Drones 2025, 9, 334. https://doi.org/
+10.3390/drones9050334
+Copyright: © 2025 by the authors.
+Licensee MDPI, Basel, Switzerland.
+This article is an open access article
+distributed under the terms and
+conditions of the Creative Commons
+Attribution (CC BY) license
+(https://creativecommons.org/
+licenses/by/4.0/).
+
+Drones 2025, 9, 334
+
+1. Introduction
+Unmanned aerial vehicle (UAV) technology has been demonstrated to play significant
+roles in various domains, including search and rescue operations at disaster sites, reconnaissance, and monitoring. Compared to the limited resources and perception range of a
+single UAV, a swarm of UAVs working collaboratively has the potential to significantly
+enhance the efficiency of task execution. Performing efficient collaboration is dependent on
+accurate information exchange. However, the current state of UAV swarm technology is
+characterized by significant data security risks. These risks can be attributed to the potential
+for attackers to target UAV ad hoc networks through methods such as information theft,
+denial of service attacks, privilege escalation, data link attacks, identity spoofing, and electromagnetic interference. The consequences of such attacks can be serious, including the
+leakage of sensitive data, service disruption, unauthorized control, and system integrity
+damage [1–4]. Consequently, there is an urgent need to develop effective data security
+strategies to ensure the data security of UAVs.
+Blockchain technology, which consists of distributed storage, a chained data structure,
+asymmetric cryptography, and consensus algorithms, is characterized by decentralization,
+tamper resistance, and traceability. Its Byzantine fault tolerance and data integrity protection
+significantly mitigate the potential impact of single points of failure and cyberattacks on UAV
+ad hoc networks. The existing literature has introduced diverse blockchain-based solutions for
+
+https://doi.org/10.3390/drones9050334
+
+Drones 2025, 9, 334
+
+2 of 25
+
+UAV networks. They address issues like identity authentication [5], malicious attack identification [6], key management [7,8], task result integrity, and data security [9–15], demonstrating
+the advantages of blockchain in ensuring UAV data security. While blockchain-based decentralization can enhance UAV ad hoc network security, practical deployment faces challenges.
+UAV network dynamics, node mobility, and spectrum limitations destabilize communication links and reduce consensus efficiency. Particularly in harsh weather, electromagnetic
+interference, and communication jamming scenarios, communication quality deteriorates,
+challenging blockchain deployment.
+In UAV ad hoc networks, node mobility makes the communication environment
+change, resulting in unpredictable communication link quality and stability. Changes in
+UAV node altitude during flight significantly impact signal attenuation. At high altitudes,
+with fewer obstacles such as buildings, terrain, and vegetation blocking communication
+paths, UAV nodes more easily establish line-of-sight (LOS) paths. This results in less signal
+attenuation during transmission and more stable communication quality. In contrast, at low
+altitudes, especially in complex environments such as urban areas or mountains, dense
+obstacles such as buildings and trees reduce the likelihood of LOS transmission between
+UAV nodes. This leads to more severe signal attenuation and significantly compromises
+the stability and reliability of communication links. Changes in UAV altitude affect signal
+transmission paths and strength and interact with environmental factors. This leads to
+significant differences in the stability and reliability of communication links between scenarios, which impacts blockchain efficiency. When UAV clusters face enemy electromagnetic
+interference or harsh weather, the communication quality worsens. Analyzing blockchain’s
+reliability under such conditions is crucial.
+In addition, UAV clusters often face spectrum resource limitations when performing tasks, which requires them to compete for channel resources to transmit messages.
+Simultaneous data transmission from multiple nodes can cause decoding failures at the
+receiving node. Therefore, an efficient channel access protocol is essential for coordination.
+Currently, the CSMA/CA channel access protocol is the most widely used in wireless
+networks. Through the Distributed Coordination Function (DCF), this protocol enables
+nodes to listen to the channel before transmitting data, thereby avoiding collisions. In UAV
+networks, where node connectivity is dynamic and the channel conditions are uncertain,
+the RTS/CTS mechanism can reserve the channel before transmission, effectively reducing
+data collisions and avoiding the hidden node problem, ultimately improving blockchain
+efficiency. However, channel access protocols introduce additional latency, which can

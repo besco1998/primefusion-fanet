@@ -1,0 +1,29 @@
+\section{Comparative Analysis}
+\label{sec:comparative_analysis}
+
+The PrimeFusion FANET framework introduces several novel contributions to the field of secure UAV communications. To contextualize its advantages, this section provides a comparative analysis against both traditional FANET protocols that do not employ blockchain and existing blockchain-based solutions. The comparison, summarized in Table \ref{tab:comparison}, evaluates the different approaches across key performance and security metrics.
+
+\begin{table*}[!t]
+\centering
+\caption{Comparative Analysis of Communication Frameworks}
+\label{tab:comparison}
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Parameter} & \textbf{Traditional FANET Protocols} & \textbf{Generic Blockchain Solutions} & \textbf{PrimeFusion FANET Framework} \\ \midrule
+\textbf{Security Model} & Centralized or Trust-based & Decentralized (PoW/PoS) & Decentralized (PoC) \\
+\textbf{Data Integrity} & Vulnerable to tampering & High (Immutable Ledger) & High (Immutable Ledger) \\
+\textbf{Consensus Latency} & N/A & High (e.g., >1s for PoW) & Low (<50ms) \\
+\textbf{Energy Consumption} & Low to Medium & Very High (PoW) / Medium (PoS) & Low (Cooperation-based) \\
+\textbf{Scalability} & Varies, often limited & Poor (Low TPS) & High (Validated >30 UAVs) \\
+\textbf{Bandwidth Overhead} & Low & High (Verbose transactions) & Very Low (CBOR Compression) \\
+\textbf{Trust Management} & Centralized or Reputation-based & Implicit (Cryptographic) & Explicit (Cooperation-based) \\
+\textbf{Attack Resistance} & Susceptible to single point of failure & Resistant to tampering & Resistant to tampering and collusion \\ \bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Comparison with Traditional FANET Protocols}
+Traditional FANET routing protocols, such as AODV or OLSR, were not designed with security as a primary consideration. They are susceptible to various attacks, including blackhole, grayhole, and wormhole attacks, which can be launched by a single compromised node. While some secure routing protocols have been proposed, they often rely on centralized key management or complex cryptographic operations that introduce significant overhead. In contrast, the PrimeFusion framework provides a fundamentally more secure foundation by establishing a decentralized root of trust. The immutability of the blockchain ensures that once a transaction or data packet is recorded, it cannot be altered, providing a robust defense against data tampering. Furthermore, the PoC consensus mechanism incentivizes honest behavior, making the network more resilient to internal threats.
+
+\subsection{Comparison with Generic Blockchain Solutions}
+A naive application of existing blockchain technologies (e.g., Ethereum or Bitcoin) to UAV networks is impractical due to their high latency, low throughput, and immense energy consumption \cite{hossain2024blockchain}. The PoW consensus mechanism, in particular, is entirely unsuitable for resource-constrained UAVs. While PoS-based blockchains are more energy-efficient, they can still introduce significant latency and may not be sufficiently responsive for real-time flight control. The PrimeFusion framework addresses these shortcomings directly. Its PoC consensus is orders of magnitude more efficient than PoW and significantly faster than generic PoS implementations. Moreover, the integration of CBOR data compression drastically reduces the communication overhead, which is a major bottleneck in other blockchain systems. This makes PrimeFusion one of the first blockchain-based frameworks that is genuinely viable for deployment on resource-constrained mobile platforms.
+

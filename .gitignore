@@ -1,0 +1,85 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.log
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# NS-3
+ns3/build/
+ns3/.lock-ns3*
+ns3/.waf*
+ns3/waf
+ns3/waf.bat
+ns3/waf3
+ns3/*.pyc
+ns3/testpy.supp
+
+# Results (keep structure, ignore data)
+results/python/raw_data/*.csv
+results/python/raw_data/*.json
+results/ns3/**/*.dat
+results/ns3/**/*.tr
+results/ns3/**/*.pcap
+results/figures/*.png
+results/figures/*.pdf
+results/tables/*.tex
+
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.pdf
+!docs/**/*.pdf
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+

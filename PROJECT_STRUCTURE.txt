@@ -1,0 +1,28 @@
+.
+├── PROJECT_STRUCTURE.txt
+├── README.md
+├── config
+├── docs
+│   ├── analysis
+│   ├── papers
+│   ├── presentations
+│   └── reports
+├── ns3
+│   ├── modules
+│   ├── scenarios
+│   └── scratch
+├── python
+│   ├── core
+│   ├── simulation
+│   ├── tests
+│   └── utils
+├── requirements.txt
+├── results
+│   ├── figures
+│   ├── ns3
+│   ├── python
+│   └── tables
+└── scripts
+    └── setup_github.sh
+
+21 directories, 4 files

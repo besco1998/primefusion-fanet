@@ -1,0 +1,808 @@
+=== 2304.13244.pdf ===
+ESCM: An Efficient and Secure Communication
+Mechanism for UAV Networks
+Haoxiang Luo, Graduate Student Member, IEEE, Yifan Wu, Gang Sun, Senior Member, IEEE,
+Hongfang Yu, Member, IEEE, Mohsen Guizani, Life Fellow, IEEE
+
+Abstract—UAV (unmanned aerial vehicle) is rapidly gaining
+traction in various human activities and has become an integral
+component of the satellite-air-ground-sea (SAGS) integrated
+network. As high-speed moving objects, UAVs not only have
+extremely strict requirements for communication delay, but also
+cannot be maliciously controlled as a weapon by the attacker.
+Therefore, an efficient and secure communication method
+designed for UAV networks is necessary. We propose a
+communication mechanism ESCM. For high efficiency, ESCM
+provides a routing protocol based on the artificial bee colony
+(ABC) algorithm to accelerate communications between UAVs.
+Meanwhile, we use blockchain to guarantee the security of UAV
+networks. However, blockchain has unstable links in highmobility networks resulting in low consensus efficiency and high
+communication overhead. Consequently, ESCM introduces
+digital twin (DT), which transforms the UAV network into a
+static network by mapping UAVs from the physical world into
+Cyberspace. This virtual UAV network is called CyberUAV.
+Then, in CyberUAV, we design a blockchain consensus based on
+network coding, named Proof of Network Coding (PoNC).
+Analysis and simulation show that the above modules in ESCM
+have advantages over existing schemes. Through ablation studies,
+we demonstrate that these modules are indispensable for efficient
+and secure communication of UAV networks.
+Index Terms—UAV networks, routing protocol, digital twin,
+blockchain consensus, network coding
+
+I
+
+I. INTRODUCTION
+
+N
+recent years, the rapid development of
+communication technology has helped UAVs show great
+potential in the public and civil fields, and it has also
+become the focus of attention in the communication field
+[1]. For example, Ranjha et al. [2] consider using UAVs as
+decode-and-forward relays to communicate between
+controllers and multi-mobile robots. In [3], the authors study
+This work was supported by the Natural Science Foundation of Sichuan
+Province under Grant 2022NSFSC0913. (Corresponding author: Gang Sun,
+Hongfang Yu.)
+Haoxiang Luo, and Gang Sun are with the Key Laboratory of Optical Fiber
+Sensing and Communications (Ministry of Education), University of
+Electronic Science and Technology of China, Chengdu 611731, China (email: lhx991115@163.com; gangsun@uestc.edu.cn).
+Yifan Wu is with the Department of Electrical and Computer Engineering,
+Carnegie Mellon University, Pittsburgh, PA 15260, USA (e-mail:
+yifanwu2@andrew.cmu.edu).
+Hongfang Yu is with the Key Laboratory of Optical Fiber Sensing and
+Communications (Ministry of Education), University of Electronic Science
+and Technology of China, Chengdu 611731, China, and also with Peng Cheng
+Laboratory, Shenzhen 518066, China (e-mail: yuhf@uestc.edu.cn).
+Mohsen Guizani is with with the Machine Learning Department, Mohamed
+Bin Zayed University of Artificial Intelligence (MBZUAI), Abu Dhabi,
+United Arab Emirates (e-mail: mguizani@ieee.org).
+
+the quality-of-service capability of UAVs in mobile edge
+networks. Moreover, as an integral part of the SAGS network,
+UAVs can assist 6G communications by performing
+indispensable functions such as auxiliary computing and
+communication relaying. In [4], the authors use UAVsassisted mobile edge computing systems to achieve the above
+functions. In [5], the authors design a multi-user
+communication network coordinated by UAVs and base
+stations.
+However, there are still many problems that need to be
+solved before the UAV network can achieve efficient and
+reliable functions. Although there is much work in the area of
+mobile ad hoc networks, and vehicular ad hoc networks, it
+does not address the unique characteristics of the UAV
+network. The faster dynamic changes than vehicles and the
+fluid topologies both make the UAV network topology change
+more frequently and unpredictably. As a result, we need to
+design specific communication mechanisms for the UAV
+network.
+A. Research Motivation
+To adapt to the fast-moving characteristics of drones and
+meet the high efficiency of UAV network communication,
+many scholars design reasonable and efficient routing
+protocols for UAV networks to improve communication
+performance and efficiency. For example, the routing
+protocols are based on geographical location proposed by [67]. In addition, there are routing protocols based on UAV
+network topology, such as [8-9]. Recently, bio-inspired
+methods have received great attention due to their potential
+properties, such as adaptability, self-organization, and
+robustness [10]. Since the UAV fleet and swarm are similar in
+that they both fly at high speed in three-dimensional space,
+thus, ABC [11] is selected as the improved method of routing
+protocol in ESCM. This routing protocol will select several
+suitable drones as candidate relay nodes, which will play a
+role and determine the most suitable relay node in the PoNC
+consensus proposed by us.
+However, the routing protocol can only improve the
+communication efficiency of the UAV network, but cannot
+solve the existing communication security problems in the
+UAV network as described in [12]. Currently, emerging
+blockchain technology provides a viable solution to security
+=== 2312.06928.pdf ===
+Blockchain-Based Security Architecture for Unmanned Aerial Vehicles in B5G/6G
+Services and Beyond: A Comprehensive Approach
+a
+
+b
+
+c
+
+d
+
+e
+
+Senthil Kumar Jagatheesaperumal , Mohamed Rahouti , Kaiqi Xiong , Abdellah Chehri , Nasir Ghani , Jan Bieniek
+
+arXiv:2312.06928v1 [cs.CR] 12 Dec 2023
+
+a
+
+b
+
+Department of Electronics and Communication Engineering, Mepco Schlenk Engineering College, Sivakasi, Tamil Nadu, India
+b
+Department of Computer and Information Sciences, Fordham University, New York, 10023, NY, USA
+c
+Cyber Florida, University of South Florida, Tampa, 33620, FL, USA
+d
+Royal Military College of Canada, Kingston, K7K 7B4, Ontario, Canada
+e
+Electrical Engineering Department, University of South Florida, Tampa, 33620, FL, USA
+
+Abstract
+Unmanned Aerial Vehicles (UAVs), previously favored by enthusiasts, have evolved into indispensable tools for effectively managing disasters and responding to emergencies. For example, one of their most critical applications is to provide seamless wireless
+communication services in remote rural areas. Thus, it is substantial to identify and consider the different security challenges in
+the research and development associated with advanced UAV-based B5G/6G architectures. Following this requirement, the present
+study thoroughly examines the security considerations about UAVs in relation to the architectural framework of the 5G/6G system,
+the technologies that facilitate its operation, and the concerns surrounding privacy. It exhibits security integration at all the protocol
+stack layers and analyzes the existing mechanisms to secure UAV-based B5G/6G communications and its energy and power optimization factors. Last, this article also summarizes modern technological trends for establishing security and protecting UAV-based
+systems, along with the open challenges and strategies for future research work.
+Keywords: Unmanned Aerial Vehicle, B5G/6G communication, security, energy, Artificial Intelligence, IoT.
+
+1. Introduction
+Unmanned aerial vehicles (UAVs) or drones have attracted
+rising attention towards wireless communications applications
+owing to their numerous advantages, such as easy mobility control and establishment of required communication links at low
+cost. They can also be used as an aerial base station to enhance wireless capacity, coverage, and energy efficiency. UAVs
+can be like small aircraft balloons or drones; they can be remotely controlled or pre-programmed. UAVs have many applications in military, surveillance, search and rescue localization,
+and telecommunications. Technical challenges exist in providing an analytical framework and efficient algorithms that can be
+used to analyze and optimize the design of drone-based communication systems.
+Under Project SkyBender, Google experimented with drones
+to deliver high-speed 5G Internet services Zhou et al. (2018b).
+The millimeter-wave technology has the potential to transmit
+gigabytes of data every second with speeds up to 40 times faster
+than 4G internet. However, the millimeter-wave signals are absorbed by atmospheric gases, while rain and humidity can also
+reduce signal strength. Millimeter waves also travel via line of
+sight, which means objects, including trees and buildings, can
+blog them.
+A blockchain system enhances the security and dependability
+of the underlying infrastructure without relying on human trust
+Rahouti et al. (2018). Blockchain networks are built in such a
+way that it is assumed any individual node could attack them at
+Preprint submitted to Computers & Security
+
+any time. Consensus protocols like proof-of-work (PoW) ensure that even if the attack happens, the network completes its
+functions as intended, regardless of human cheating or intervention. The blockchain allows one to store data and secure it using
+various cryptographic properties such as digital signatures and
+hashing as soon as data enters a block in a blockchain network.
+If intruders try to tamper with the blockchain database, consensus would recognize and shut down the attempt. The consensus
+prevents data tampering and network attacks.
+Blockchains are made up of nodes, which can be within one
+institution, or multiple institutions all over the world on the
+computer of any citizen that wants to participate in any decision to be made. They form a democratic system, so if anyone
+node is compromised and malicious actions are taken, the other
+nodes would automatically recognize the problem and simply
+not execute the inappropriate activity. The blockchain has incredible security features, so everyone uses it to store essential
+data correctly. One of the striking features of blockchains is
+their scalability features, in which transactions per second measure blockchains with nodes all over the world run by independent citizens.
+Using UAVs as a service (e.g., Drone-as-a-Service) is a
+revolutionary development for the proposition, similar to the
+Infrastructure-as-a-Service model, UAV-as-a-Service would be
+directly structured to perform UAV tasks and responsibilities
+Nguyen et al. (2023). With the inclusion of blockchain, businesses can benefit from increased continuity by providing that
+service. Applicable technologies such as 5G and 6G allow for
+December 13, 2023
+
+• To provide the state-of-the-art research challenges and the
+comparative discussion on existing articles.
+
+intercommunication between multiple parties, enabling users of
+UAV technology to benefit from cross-functional use cases that
+serve as a service platform. With UAVs on the horizon, there is
+potential for market capital in opportunistic delivery to civilians
+without needing a driver, thereby serving society by completing
+tasks and assignments.
+Furthermore, adopting blockchain technology into UAV environments enables a ”zero-trust policy,” ensuring that all parties can see transparency in the service and data provided. With
+both UAVs and the Internet of Things (IoT) architectures still
+in their adolescence, there is no plausible way to justify keeping private data away from its viewers. The public blockchain
+is known to be a public structure, which further emphasizes the
+need for a zero-trust policy. Allowing for zero trust would build
+trust in the overall ecosystem nurtured by all parties. Specifically, zero-trust security frameworks can authenticate, authorize, and validate all users, thereby sourcing the responsibility for all actions and outcomes Yang et al. (2023). Congruent
+methods to this approach would also be valid examples of potential security solutions for the overall security concept in UAV
+=== 2312.12381.pdf ===
+1
+
+Blockchain-Based Identity Authentication
+Oriented to Multi-Cluster UAV Networking
+
+arXiv:2312.12381v1 [cs.CR] 15 Nov 2023
+
+Zesong Dong, Wei Tong*, Zhiwei Zhang, Jian Li, Weidong Yang, and Yulong Shen
+
+traditional UAV identity authentication relying on infrastructure,
+easily causing safety issues, like UAV disconnection and
+crashes. The robustness of UAV clusters through identity
+authentication is currently a research hotspot [3]. Decentralized
+blockchain technology is a promising selection, and it can
+establish trustworthy identity management and authentication
+without a centralized authentication authority [4].
+Motivation. Some blockchain-based UAV identity authentication works have been proposed [5]–[11], but they cannot
+address the UAV reconnection issue. Indeed, they directly
+discard disconnected UAVs and even disband clusters with a
+disconnected head UAV for security. On one hand, as UAVs
+continuously disconnect, the number of UAVs that can normally
+execute tasks decreases, causing an increasing workload for the
+remaining UAVs. The cluster even disbands directly when the
+head UAV disconnects, leading to task execution to be interrupted.
+On the other hand, due to no infrastructure relied on, task results
+are stored within UAVs. The UAV disconnection also results in
+the loss of task results from the cluster. The occurrence of these
+Index Terms—Identity authentication, multi-cluster UAV net- situations compromises the robustness of the UAV cluster and
+working, blockchain, cluster robustness, task result integrity
+the integrity of the task results stored in the cluster [6].
+Contribution. To address these issues, this paper proposes
+I. I NTRODUCTION
+a blockchain-based identity authentication solution oriented to
+Nowadays, outdoor work is often done using Unmanned multi-cluster UAV networking. Our solution includes a UAV
+Aerial Vehicle (UAV) networking to reduce costs and personal reconnection mechanism to ensure cluster robustness and a
+dangers [1]. For example, UAVs can complete precise rescue task result backup mechanism to ensure task result integrity.
+positioning, rapid disaster assessment, and efficient material de- The contributions of this paper are as follows.
+livery in disaster areas that are difficult for humans to enter [2].
+• A blockchain-based UAV identity authentication model
+However, in such disaster areas, severe infrastructure damage
+is constructed, and the identity management blockchain
+leads to security risks (e.g., Sybil attacks and key leakage) for
+is maintained by the head UAVs of all clusters. All
+authentication information is stored on-chain to support
+Wei Tong, Zesong Dong, Jian Li, and Weidong Yang are with the Hangzhou
+UAV reconnection and task result backup.
+Institute of Technology, Xidian University, Hangzhou, China. Zhiwei Zhang and
+Yulong Shen are with the School of Computer Science and Technology, Xidian
+• On this basis, we propose a UAV reconnection mechUniversity, Xi’an, China. Wei Tong is also with the Engineering Research
+anism containing the UAV disconnection, and UAV
+Center of Blockchain Technology Application and Evaluation, Ministry of
+reconnection. It can guarantee cluster security during
+Education, Xi’an, China. All authors are also with Shaanxi Key Laboratory of
+Network and System Security, Xi’an, China.
+UAV disconnection and reconnection processes via eventThis work is supported in part by National Key Research and Development
+driven key updates, ultimately ensuring cluster robustness.
+Program of China (Program No. 2020YFB1005500), in part by National Natural
+We
+further design a redundant task result backup
+Science Foundation of China under Grant No. 62220106004, 62172141, and
+61972310, in part by Major Research Plan of the National Natural Science
+mechanism with the double backup of task results by the
+Foundation of China under Grant No. 92267204, in part by ”Pioneer” and
+head UAV and member UAVs. Regardless of the head
+”Leading Goose” R&D Program of Zhejiang (Program No. 2023C04038), in
+UAV or member UAV disconnection, the task results will
+part by Natural Science Foundation of Henan under Grant No. 222300420004,
+in part by Key Research and Development Program of Shaanxi under Grant
+not be completely lost, thus ensuring task result integrity.
+No. 2022KXJ-093 and Grant No. 2021ZDLGY07-05, in part by Innovation
+• Extensive experiments are conducted to demonstrate the
+Capability Support Program of Shaanxi (Program No. 2023-CX-TD-02), in part
+excellent robustness of the UAV cluster and the integrity of task
+by Key R&D Program of Shandong Province, China Grant No.2023CXPT056,
+in part by Jinan ”20 New Colleges and Universities” Introduction and
+results. In addition, we analyze delay and energy consumption
+Innovation Team (No. 2021GXRC064), and in part by Proof of Concept
+performance to prove the feasibility of our solution. The delay
+Foundation of Xidian University Hangzhou Institute of Technology under
+of UAV reconnection identity authentication of our solution is
+Grant No. 20107230024.
+*Corresponding author (email: tongwei@xidian.edu.cn).
+less than 50% of that of the existing solution.
+Abstract—Unmanned Aerial Vehicle (UAV) networking is increasingly used in field environments such as power inspection, agricultural
+plant protection, and emergency rescue. To guarantee UAV networking
+security, UAV identity authentication attracts wide attention, especially in the field environment without perfect infrastructure. Some
+blockchain-based UAV identity authentication solutions are proposed
+to establish decentralized and trusted authentication systems without
+relying on infrastructure. However, these solutions do not support
+disconnected UAV reconnection or even disband a cluster directly after
+its head UAV disconnection, which compromises cluster robustness
+and task result integrity. In this paper, we propose a blockchainbased identity authentication solution oriented to multi-cluster UAV
+networking with a UAV disconnection mechanism and a task result
+backup mechanism. Specifically, we build a blockchain maintained
+by head UAVs of all clusters, managing identity information to
+guarantee the security of decentralized identity management. The
+UAV disconnection mechanism permits a verified distributed UAV
+reconnection to ensure the robustness of the UAV cluster, and on this
+basis, the task result backup mechanism ensures the integrity of the
+task results stored in a cluster even any UAV disconnection. Finally,
+=== 2402.15817.pdf ===
+BETA-UAV: Blockchain-based Efficient
+Authentication for Secure UAV Communication
+Sana Hafeez, Mahmoud A. Shawky, Mohammad Al-Quraan, Lina Mohjazi, Muhammad Ali Imran and Yao Sun
+
+arXiv:2402.15817v1 [cs.CR] 24 Feb 2024
+
+James Watt School of Engineering, University of Glasgow, G12 8QQ, United Kingdom
+Email: {s.hafeez.1}@research.gla.ac.uk.
+
+Abstract—Unmanned aerial vehicles (UAV), an emerging architecture that embodies flying ad-hoc networks, face critical
+privacy and security challenges, mainly when engaged in datasensitive missions. Therefore, message authentication is a crucial
+security feature in drone communications. This paper presents a
+Blockchain-based Efficient, and Trusted Authentication scheme
+for UAV communication, BETA-UAV, which exploits the inherent
+properties of blockchain technology concerning memorability and
+is immutable to record communication sessions via transactions
+using a smart contract. The smart contract in BETA-UAV
+allows participants to publish and call transactions from the
+blockchain network. Furthermore, transaction addresses are
+proof of freshness and trustworthiness for subsequent transmissions. Furthermore, we investigated their ability to resist active
+attacks, such as impersonation, replaying, and modification. In
+addition, we evaluate the gas costs associated with the functions
+of the smart contract by implementing a BETA-UAV on the
+Ethereum public blockchain. A comparison of the computation
+and communication overheads shows that the proposed approach
+can save significant costs over traditional techniques.
+Index Terms—Authentication, Blockchain, Pki-based authentication, Smart contract, UAV
+
+I. I NTRODUCTION
+Unmanned aerial vehicle (UAV) technology enhances the
+dependability and trustworthiness of transportation systems,
+particularly in heterogeneous and nonstationary data traffic
+scenarios. However, heterogeneous data sharing raises significant security and privacy concerns, preventing future intelligent transportation systems (ITS) from integrating UAVs
+[1]. Moreover, connectivity has become increasingly crucial in
+multiple-UAV systems. Drone communication is challenging
+because of (i) high node mobility, (ii) fluid topology, (iii)
+the long distance between nodes that can result in intermittent links, and (iv) power constraints. Several features have
+contributed to the widespread use of UAV technology, such
+as coverage, exploratory possibilities, and intelligence-level
+rewards. Interest in UAVs is proliferating, and we can see
+that they are being deployed in many worldwide applications,
+such as aerial photography, agricultural production, and film
+and television production. Establishing secure communication
+channels permits reliable UAV operations. However, external
+communication links, that is, between UAVs and infrastructure, and intra-vehicle communication must be protected. In
+addition, UAVs must ensure that only authorized entities have
+access to their resources and that all their internal modules are
+authenticated to achieve device security [2]. As UAVs operate
+without human intervention, device-to-device authentication is
+
+essential. Before a UAV can access a ground control station
+(GCS), all modules must be authenticated. Blockchain technology can be used to create a distributed system in which entities
+can enter and verify blocks, thereby ensuring system integrity.
+However, because users can request data for flying drones
+directly from UAVs instead of servers, drones continue to lose
+or leak data during transmission. This situation determines
+the complexity of a scheme. Consequently, the transmitted
+data may be subjected to extensive computation, which raises
+the possibility of privacy leakage. Furthermore, revealing
+privileged information can result in transmission security
+breaches. Therefore, a lightweight Blockchain-based Efficient
+Authentication BETA-UAV scheme was proposed for secure
+UAV communication. The objective is to enable mutual authentication and freshness identification such that the UAV can
+establish secure communication channels. Proof-of-freshness
+or authentication protocols allow UAVs to integrate into these
+systems quickly and securely. In this study, we propose to
+accomplish the above-mentioned goals by conceiving new
+strategies by combining elliptic curve cryptography (ECC)
+and a trusted authentication scheme. We present a BETAUAV blockchain-based efficient authentication for secure UAV
+communication that promises how the BETA-UAV can resist
+attacks. The objective is to enable mutual authentication and
+freshness identification so that the UAV network can establish
+secure communication channels. Proof-of-freshness or authentication protocols allow UAVs to integrate into these systems
+with minimal hassle and maximum security.
+II. R ELATED W ORKS
+Recently, several studies have investigated the field of UAV
+system authentication. For example, this study provides an authentication framework for a UAV network using blockchain,
+5G, and SHA-256. According to the authors, the proposed
+framework is secure against various IoD attacks and outperforms other schemes in terms of the communication overhead
+and computational costs. However, the computational costs
+of this study are still high because of the use of SHA-256,
+which is inappropriate for UAVs. Li et al. [3] proposed a
+lightweight communication mechanism that is supposed to
+be safer and faster than SM4 CTR. Lei et al. [4] illustrated
+a lightweight protocol for secure communication based on
+a physical unclonable function that employs a light mac
+function for encryption. Khalid et al. [5] presented a light
+authentication scheme based on a non-cloneable physical
+
+UAV
+
+The Blockchain
+Network
+GCS
+
+GCS
+
+Trusted Authority
+
+Fig. 1. UAV Ad-hoc Network
+=== 2403.04796.pdf ===
+Digital Communications and Networks(DCN)
+
+journal homepage: www.elsevier.com/locate/dcan
+
+Blockchain-Enhanced UAV Networks for Post-Disaster Communication: A
+Decentralized Flocking Approach
+Sana Hafeez, Runze Cheng, Lina Mohjazi, Yao Sun∗ , Muhammad Ali Imran
+
+arXiv:2403.04796v1 [cs.CR] 5 Mar 2024
+
+James Watt School of Engineering, University of Glasgow
+Glasgow G12 8QQ, UK
+
+Abstract
+Unmanned Aerial Vehicles (UAVs) have significant potential for agile communication and relief coordination in post-disaster scenarios, particularly
+when ground infrastructure is compromised. However, efficiently coordinating and securing flocks of heterogeneous UAVs from different service
+providers poses significant challenges related to privacy, scalability, lightweight consensus protocols, and comprehensive cybersecurity mechanisms.
+This study introduces a robust blockchain-enabled framework designed to tackle these technical challenges through a combination of consensus
+protocols, smart contracts, and cryptographic techniques. First, we propose a consortium blockchain architecture that ensures secure and private
+multi-agency coordination by controlling access and safeguarding the privacy of sensitive data. Second, we develop an optimized hybrid consensus
+protocol that merges Delegated Proof of Stake and Practical Byzantine Fault Tolerance (DPOS-PBFT), aiming to achieve an effective balance
+between efficiency, security, and resilience against node failures. Finally, we introduce decentralized flocking algorithms that facilitate adaptable
+and autonomous operations among specialized UAV clusters, ensuring critical disaster relief functions under conditions of uncertain connectivity.
+Comprehensive simulations demonstrate the system achieved linear scaling of throughput up to 500 UAV nodes, with only a 50ms increase in
+latency from 10 to 500 nodes. The framework maintained high throughput and low latency despite spoofing, denial-of-service (DoS), and tampering
+attacks, showing strong cyber resilience. Communication latencies were kept under 10ms for diverse UAV operations through self-optimizing
+network intelligence, with median values around 2-3ms.
+© 2022 Published by Elsevier Ltd.
+KEYWORDS: Blockchain, Unmanned Aerial Vehicles (UAVs), Emergency Communications, Data Privacy, Aerial Communications, Secure
+Wireless Networks.
+
+1. Introduction
+
+Natural disasters, such as hurricanes, floods, and earthquakes, accidents can severely damage critical communication infrastructure, disrupting access to aid and relief coordination. Unmanned aerial vehicles
+(UAVs) offer the potential for rapidly restoring connectivity, but coordinating heterogeneous UAV flocks poses challenges in security, privacy,
+and scalability [1]. This motivates designing innovative blockchainenabled UAV flocking networks to address limitations. This study proposes a novel framework using blockchain technology to improve UAV
+operations in post-disaster scenarios.
+
+1.1. Background
+Intelligent emergency communication systems are vital for ensuring effective network connectivity during disaster response scenarios. UAVs have proven effective at expanding wireless coverage for
+Internet-of-Things (IoT) devices due to their ability to hover in diverse locations and establish reliable links [2]. However, coordinating heterogeneous UAV fleets poses challenges such as limited flight
+
+∗ Corresponding Author: Yao Sun, Email: yao.sun@glasgow.ac.uk.
+1 This paper was submitted in part to IEEE VTC2024-Spring, Singapore.
+
+endurance [3], restricted communication range [1], reliance on damaged ground networks and inadequate pre-planned routes [4], intermittent connectivity [5], lack of coordination between UAVs and human responders, security vulnerabilities from chaos, and insufficient
+transparency mechanisms. Recent research has explored decentralized
+blockchain approaches to help overcome some obstacles through inherent attributes like distribution, security, transparency, automation,
+and resilience [6]. However, significant gaps remain before blockchain
+technology can be successfully incorporated into UAV networks for disaster response [7], despite analytical frameworks optimizing UAV deployment. Blockchain integration introduces new consensus, interoperability, security, and smart contract design challenges, specifically for
+decentralized disaster-resilient UAV fleet coordination [8].
+Although blockchain-enabled UAV networks have been studied to
+address security issues in UAV swarms [9], research gaps remain
+in areas such as real-time data processing efficiency, scalability of
+blockchain solutions in large swarms, integration with existing air traffic
+control systems, and the development of standardized interoperability
+protocols among diverse UAV systems. Further research is also needed
+on the potential environmental impact and ethical considerations related
+to surveillance and data privacy. Existing work focuses on building internal trust using blockchain [10], such as UAV practical Byzantine fault
+tolerance (U-PBFT) for lightweight consensus and real-time trust eval-
+
+2
+
+Sana Hafeez, et al.
+
+uation [11]. However, dynamic topology and limited UAV resources
+pose challenges [12], highlighting the need for secure, efficient, and
+intelligent blockchain coordination frameworks tailored for disaster response UAVs to fully realize their decentralized collaborative autonomy
+potential. This motivates designing a blockchain framework to realize
+the potential of UAVs for revolutionizing disaster response, addressing
+identified gaps through innovations in consensus protocols [13], interoperability, security mechanisms, and smart contract architectures specialized for resource-constrained UAV disaster response coordination.
+
+The rest of the paper is organized as follows. Section 2 provides an
+overview of the relevant literature. Section 3 presents the architecture
+and the models of the proposed system. Section 4 details the decentralized flocking algorithm for UAV coordination. Section 5 describes
+a customized hybrid consensus protocol. Section 6 presents an analysis
+of the simulation setup and the results. Finally, Section 7 concludes the
+study and discusses future work.
+
+1.2. Motivation
+
+2.1. Blockchain-Enabled UAV Solutions for Disaster Response
+
+This study proposes several innovative solutions to address the identified limitations related to optimized blockchain consensus protocols,
+heterogeneous network interoperability, security against threats, and
+adaptive smart contracts for evolving disaster coordination needs. The
+overarching motivation is to transform disaster response strategies by
+unlocking the full potential of UAV networks through blockchain integration. Specifically, the aim is to facilitate decentralized, efficient, and
+autonomous UAV-based operations even in challenging post-disaster
+environments. This has the potential to significantly improve the effectiveness of time-critical relief efforts [14]. A hybrid Delegated Proof
+of Stake and Practical Byzantine Fault Tolerance (DPoS-PBFT) consensus approach that balances efficiency, security, and fault tolerance
+is promising for accommodating the constraints of the UAV platform
+and the volatility of the aerial environment. In addition, bio-inspired
+flocking techniques based on Reynolds rules [15] can enable resilient
+coordination of UAV clusters under uncertain connectivity during disaster relief. However, decentralized flocking alone cannot address critical security and access control challenges. Therefore, this study holistically tackles these motivations by developing an advanced decentralized
+ecosystem for secure, reliable, and optimized coordination among UAV
+fleets to enhance disaster management. The specific technical details
+that underpin the system design of the proposed novel framework are
+elaborated in Sections 3- 5.
+
+=== 2506.22745.pdf ===
+Trusted Routing for Blockchain-Enabled
+Low-Altitude Intelligent Networks
+Sijie He† , Ziye Jia† , Qiuming Zhu† , Fuhui Zhou† , and Qihui Wu†
+
+arXiv:2506.22745v1 [cs.NI] 28 Jun 2025
+
+†
+
+The Key Laboratory of Dynamic Cognitive System of Electromagnetic Spectrum Space, Ministry of Industry and
+Information Technology, Nanjing University of Aeronautics and Astronautics, Nanjing, Jiangsu, 211106, China
+{hesijie, jiaziye, zhuqiuming, zhoufuhui, wuqihui}@nuaa.edu.cn
+
+Abstract—Due to the scalability and portability, the lowaltitude intelligent networks (LAINs) are essential in various
+fields such as surveillance and disaster rescue. However, in
+LAINs, unmanned aerial vehicles (UAVs) are characterized
+by the distributed topology and high dynamic mobility, and
+vulnerable to security threats, which may degrade the routing
+performance for data transmission. Hence, how to ensure the
+routing stability and security of LAINs is a challenge. In
+this paper, we focus on the routing process in LAINs with
+multiple UAV clusters and propose the blockchain-enabled zerotrust architecture to manage the joining and exiting of UAVs.
+Furthermore, we formulate the routing problem to minimize the
+end-to-end (E2E) delay, which is an integer linear programming
+and intractable to solve. Therefore, considering the distribution
+of LAINs, we reformulate the routing problem into a decentralized partially observable Markov decision process. With the
+proposed soft hierarchical experience replay buffer, the multiagent double deep Q-network based adaptive routing algorithm
+is designed. Finally, simulations are conducted and numerical
+results show that the total E2E delay of the proposed mechanism
+decreases by 22.38% than the benchmark on average.
+Index Terms—Low-altitude intelligent networks, trusted routing, blockchain, soft hierarchical experience replay buffer,
+multi-agent deep reinforcement learning.
+
+I. I NTRODUCTION
+
+A
+
+S key components of the six generation communication
+
+networks, the low-altitude intelligent network (LAINs)
+are widely applied to multiple tasks, such as disaster rescue
+and real-time monitoring [1]–[3]. In these applications, the
+data generated from sensor devices (SDs) are required to
+be relayed to the remote ground base stations (BSs) by
+unmanned aerial vehicles (UAVs) [4]. Particularly, UAVs
+act as aerial relays and cooperatively accomplish the data
+collection and transmission, providing low-cost, flexible, and
+versatile services. In LAINs, routing is a significant issue for
+data transmission [5]–[7].
+However, since UAVs in LAINs are characterized by
+the complex application environment, high mobility and
+distributed topology, they are vulnerable to security threats
+and unreliable, i.e., attacks and node failures. Thus, the
+availability of communication links is susceptible, which
+leads to the reduction of routing performances. Hence, it
+is significant to efficiently manage the mobility of UAVs in
+the zero-trust environment. There exist a couple of works
+This work was supported in part by the Natural Science Foundation on
+Frontier Leading Technology Basic Research Project of Jiangsu under Grant
+BK20222001, in part by National Natural Science Foundation of China
+under Grant 62301251, in part by the Aeronautical Science Foundation
+of China 2023Z071052007, and in part by the Young Elite Scientists
+Sponsorship Program by CAST 2023QNRC001.
+
+related to the management of UAVs. For instance, in [8],
+the ground control station (GCS) is responsible for managing the connection among all UAVs, through the status
+message sent by UAVs. In [9], the authors present that as
+the center controller and manager, the GCS receives the data
+transmitted by UAVs, which is suffered from long distances,
+undulating terrains or other interferences. Authors in [10]
+present that the GCS remotely controls UAVs by sending
+controlling information, in which the relay UAV is limited
+within the communication range of the GCS, restricting the
+scope of operations. Moreover, the above works rely on a
+center controller, which is not resilient to fault tolerance and
+may be susceptible to tampering. Hence, how to guarantee
+the reliability and security of routing remains challenging in
+the distributed and zero-trust network.
+Meanwhile, the transmission delay is a key quality of service, since low delay can significantly improve the timeliness
+and reliability for various emergency applications, such as
+the surveillance information transmission [11]. Therefore, it
+is necessary to design an adaptive and dynamic algorithm
+to enable timely and reliable routing in the varying network
+topology. To tackle this issue, the multi-agent reinforcement
+learning (MARL) can be applied [12]. Specifically, there
+exist a couple of works focusing on MARL-based routing problems in dynamic scenarios. For example, in [13],
+the authors propose a value decomposition network based
+MARL algorithm to minimize the end-to-end (E2E) delay of
+packet routing within dynamic aerial and terrestrial hybrid
+networks. [14] formulates the packet routing as a maxmin problem using the Lagrange method, and proposes a
+constrained MARL dynamic routing algorithm to balance the
+objective improvement and constraint satisfaction. Authors in
+[15] establish the mean-field enhanced heterogeneous MARL
+framework to optimize the communication energy efficiency
+during routing. The above studys illustrate that the MARL
+can solve the routing problem effectively. However, these
+works do not consider the mobility management of UAVs in
+the zero-trust environment.
+To deal with the above challenges, in this paper, the routing
+process is depicted in the zero-trust LAINs with multiple
+UAV clusters, considering the dynamic joining and exiting
+=== 2508.00938.pdf ===
+1
+
+Trusted Routing for Blockchain-Empowered UAV
+Networks via Multi-Agent Deep Reinforcement
+Learning
+
+arXiv:2508.00938v1 [eess.SY] 31 Jul 2025
+
+Ziye Jia, Member, IEEE, Sijie He, Qiuming Zhu, Senior Member, IEEE, Wei Wang, Member, IEEE,
+Qihui Wu, Fellow, IEEE, and Zhu Han, Fellow, IEEE
+
+Abstract—Due to the high flexibility and versatility, unmanned
+aerial vehicles (UAVs) are leveraged in various fields including
+surveillance and disaster rescue. However, in UAV networks,
+routing is vulnerable to malicious damage due to distributed
+topologies and high dynamics. Hence, ensuring the routing security
+of UAV networks is challenging. In this paper, we characterize the
+routing process in a time-varying UAV network with malicious
+nodes. Specifically, we formulate the routing problem to minimize
+the total delay, which is an integer linear programming and
+intractable to solve. Then, to tackle the network security issue,
+a blockchain-based trust management mechanism (BTMM) is
+designed to dynamically evaluate trust values and identify lowtrust UAVs. To improve traditional practical Byzantine fault tolerance algorithms in the blockchain, we propose a consensus UAV
+update mechanism. Besides, considering the local observability,
+the routing problem is reformulated into a decentralized partially
+observable Markov decision process. Further, a multi-agent double
+deep Q-network based routing algorithm is designed to minimize
+the total delay. Finally, simulations are conducted with attacked
+UAVs and numerical results show that the delay of the proposed
+mechanism decreases by 13.39%, 12.74%, and 16.6% than multiagent proximal policy optimal algorithms, multi-agent deep Qnetwork algorithms, and methods without BTMM, respectively.
+Index Terms—UAV network, trusted routing, blockchain, multiagent deep reinforcement learning, Byzantine fault tolerance.
+
+I. I NTRODUCTION
+a key component of the space-air-ground integrated
+network in the six generation communication techniques,
+unmanned aerial vehicles (UAVs) are rapidly developed and
+widely applied to multiple tasks, such as disaster rescue and
+real-time monitoring [1], [2]. In these applications, UAVs can
+serve as aerial base stations for data collection and transmission,
+providing low-cost, flexible, and versatile services [3]. Besides,
+UAV networking can cooperatively accomplish complex tasks,
+in which routing is a significant issue for optimizing the
+
+A
+
+S
+
+Ziye Jia is with the College of Electronic and Information Engineering,
+Nanjing University of Aeronautics and Astronautics, Nanjing 211106, China,
+and also with the State Key Laboratory of Integrated Service Networks, Xidian
+University, Xi’an Shaanxi 710071, China (e-mail: jiaziye@nuaa.edu.cn).
+Sijie He, Qiuming Zhu, Wei Wang, and Qihui Wu are with the College
+of Electronic and Information Engineering, Nanjing University of Aeronautics
+and Astronautics, Nanjing 211106, China (e-mail: sx2304109@nuaa.edu.cn;
+zhuqiuming@nuaa.edu.cn; wei_wang@nuaa.edu.cn; wuqihui@nuaa.edu.cn).
+Zhu Han is with the University of Houston, Houston, TX 77004 USA, and
+also with the Department of Computer Science and Engineering, Kyung Hee
+University, Seoul 446-701, South Korea (e-mail: hanzhu22@gmail.com).
+
+data transmission [4]–[6]. Moreover, since UAV networks are
+characterized by the complex application environment, high
+dynamic and distributed topology, they are vulnerable to malicious attacks [3]. When there exist malicious UAVs, the hostile
+activities can lead to the degradation of routing performances.
+Therefore, it is necessary to evaluate the behaviors and manage
+the malicious UAVs. There exist a couple of works focusing on building the node trust table by a single-node based
+centralized manager, which is not resilient to fault tolerance
+and can be easily tampered with [7]. Hence, to improve the
+routing security, the blockchain technique has been introduced
+to build decentralized trusted mechanisms [8]. In particular,
+the blockchain is a distributed ledger, consisting of a chain of
+blocks, in which transaction details and records are stored and
+hard to be tempered with [9].
+Meanwhile, delay is a key quality of service for routing in
+the UAV network, since low delay can significantly improve the
+timeliness and reliability for various emergency applications,
+such as surveillance information transmission [10]. Besides, the
+energy and storage capacity of UAV networks are constrained.
+Hence, it is necessary to collaborate the resources of UAV networks to provide routing services with low delay. Additionally,
+due to the distributed topology, high mobility, and low-trust
+of UAV networks, the availability of communication links is
+susceptible, leading to the reduction of routing performances.
+Therefore, it is crucial to design a dynamic routing algorithm to
+maintain reliable and robust communications in UAV networks.
+Most traditional routing algorithms are designed for static
+environment or fixed rules, such as the Bellman Ford algorithm
+and Dijkstra algorithm, which cannot be directly applied to
+UAV networks [11], [12]. Besides, it is challenging to obtain
+the global information of the decentralized UAV network [13].
+Hence, it is significant to design a dynamic and adaptive
+algorithm to enable the efficient and safe routing in UAV
+networks.
+To deal with the above challenges, in this paper, due to
+the dynamic and distributed topology, as well as the complex
+environment of UAV networks, the routing process is depicted
+by a time-varying model with malicious UAVs. In light of the
+constructed UAV network, the routing problem is formulated
+to minimize the total end-to-end delay, which is an integer
+linear programming (ILP) and intractable to solve. Besides,
+
+2
+=== 302868.pdf ===
+Received 9 June 2023; accepted 11 July 2023. Date of publication 13 July 2023;
+date of current version 30 August 2023. The review of this article was coordinated by Editor Lina Bariah.
+Digital Object Identifier 10.1109/OJVT.2023.3295208
+
+Blockchain-Assisted UAV Communication
+Systems: A Comprehensive Survey
+SANA HAFEEZ (Student Member, IEEE), AHSAN RAZA KHAN,
+MOHAMMAD M. AL-QURAAN (Student Member, IEEE), LINA MOHJAZI (Senior Member, IEEE),
+AHMED ZOHA (Senior Member, IEEE), MUHAMMAD ALI IMRAN (Fellow, IEEE),
+AND YAO SUN (Senior Member, IEEE)
+(Invited Paper)
+James Watt School of Engineering, Electrical and Electronics Engineering, University of Glasgow, G12 8QQ Glasgow, U.K.
+CORRESPONDING AUTHOR: YAO SUN (e-mail: yao.sun@glasgow.ac.uk)
+
+ABSTRACT
+
+Unmanned aerial vehicles (UAVs) have recently established their capacity to provide costeffective and credible solutions for various real-world scenarios. UAVs provide an immense variety of
+services due to their autonomy, mobility, adaptability, and communications interoperability. Despite the
+expansive use of UAVs to support ground communications, data exchanges in those networks are susceptible
+to security threats because most communication is through radio or Wi-Fi signals, which are easy to hack.
+While several techniques exist to protect against cyberattacks. Recently emerging technology blockchain
+could be one of promising ways to enhance data security and user privacy in peer-to-peer UAV networks.
+Borrowing the superiorities of blockchain, multiple entities can communicate securely, decentralized, and
+equitably. This article comprehensively overviews privacy and security integration in blockchain-assisted
+UAV communication. For this goal, we present a set of fundamental analyses and critical requirements
+that can help build privacy and security models for blockchain and help manage and support decentralized
+data storage systems. The UAV communication system’s security requirements and objectives, including
+availability, authentication, authorization, confidentiality, integrity, privacy, and non-repudiation, are thoroughly examined to provide a deeper insight. We wrap up with a discussion of open research challenges, the
+constraints of current UAV standards, and potential future research directions.
+
+INDEX TERMS Blockchain, drone communication, federated learning, privacy, security, UAV networks.
+
+I. INTRODUCTION
+
+The use of unmanned aerial vehicles (UAVs) has gained a
+great attention due to their high mobility, affordability, and
+ease of use. UAVs are considered valuable service enablers
+for innovative city applications, healthcare domains, real-time
+surveillance and monitoring, disaster management, and
+wireless communication. Approximately 102.4 billion dollars
+will be spent annually on UAVs by 2030, a compound annual
+growth rate of 19.6%, surpassing 19.78 billion dollars in
+2020 [1].
+Solely devoted UAVs could be deployed as aerial base
+stations (ABSs), access points (APs), or relays to assist ter-
+
+restrial wireless communications from the sky, resulting in an
+innovative approach known as UAV-assisted communications.
+This approach has several upgrading processes, including
+potential on-demand deployment, high network reconfiguration flexibility, and a high probability of line of sight (LoS)
+communication links. UAVs have the potential to meet these
+requirements concerning user mobility, random channel fluctuations, and blocking effects. UAVs can broaden the coverage
+area, decrease the blind spots of terrestrial BS, and increase
+the probability of a direct LoS. The environmental challenges
+UAVs face cannot be solved using conventional optimization
+techniques.
+
+This work is licensed under a Creative Commons Attribution 4.0 License. For more information, see https://creativecommons.org/licenses/by/4.0/
+558
+
+VOLUME 4, 2023
+
+A. BACKGROUND
+
+In recent years, UAVs have been utilized for various applications such as surveillance, mapping, remote sensing, search
+and rescue, disaster control, and entertainment, among others [2]. These technical UAVs often work collectively as
+UAV swarm intelligence. Designing them requires joint optimization problems of UAVs and blockchain, including flight
+trajectory, time scheduling, altitude optimization, aerial and
+relay base stations, energy harvesting, power transfer, optimal
+power consumption, and resource allocation [3]. Specialized
+drones and swarm units are also used as temporary base stations in disaster areas and emergencies.
+It is anticipated that UAVs will become increasingly prevalent and capture a significant market share by 2025 [4].
+However, there are still significant barriers to their widespread
+use in various applications, such as optimal UAV deployment
+in 3D space, trajectory optimization, wireless and computational resource allocation, and flight duration when deploying
+UAVs as base stations (BS) in UAV communications. Additionally, wireless network deployment and expansion require
+considerable time and capital investments. Moreover, the
+broadcast nature of UAV-assisted wireless networks makes
+them highly susceptible to privacy and security breaches,
+including distributed denial-of-service (DDOS), replay, impersonation, message injection, spoofing, malware infection,
+eavesdropping links, and line-of-interference attacks. Consequently, UAV-assisted communication presents significant
+privacy and security challenges that must be addressed [5].
+Cryptographic keys and hash-based blockchain techniques
+can provide security against global positioning system (GPS)
+spoofing, wormhole attacks, jamming, DOS, and eavesdropping in UAV swarm applications [6]. Multiple consensus
+algorithms are restricted in their capacity to provide high
+throughput in a distributed network. In addition to the shortcomings of the current architecture, blockchain’s security
+algorithms impose a high computational delay on the UAV
+swarm network, rendering it unsuitable for applications requiring high availability and low latency. UAV communication faces several challenges and limitations, including:
+1) Security and Privacy: UAV communication systems are
+vulnerable to cyber threats, including unauthorized access, data tampering, and spoofing attacks. Ensuring
+secure and private communication between UAVs and
+ground stations is crucial to maintaining the integrity
+and confidentiality of data.
+2) Trust and Accountability: UAV communication involves
+multiple stakeholders, including UAV operators, service
+providers, and regulatory authorities. Establishing trust
+and accountability among these entities is essential for
+reliable and transparent operations. Centralized trust
+models may introduce single points of failure and raise
