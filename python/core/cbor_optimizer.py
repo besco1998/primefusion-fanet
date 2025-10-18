@@ -40,7 +40,7 @@ class CBORCompressor:
     def __init__(self):
         self.compression_history = []
         
-        # UAV-specific compression dictionary
+        # UAV-specific compression dictionary (enhanced with blockchain keys)
         self.uav_dictionary = {
             'position': 'p',
             'velocity': 'v', 
@@ -60,7 +60,18 @@ class CBORCompressor:
             'latitude': 'lat',
             'longitude': 'lon',
             'emergency': 'emg',
-            'communication': 'comm'
+            'communication': 'comm',
+            # Blockchain-specific keys
+            'blockchain': 'bch',
+            'block_hash': 'bh',
+            'previous_hash': 'ph',
+            'signature': 'sig',
+            'milestone': 'ms',
+            'dag_tip': 'dt',
+            'session_mac': 'sm',
+            'root_cert': 'rc',
+            'block_index': 'bi',
+            'nonce': 'n'
         }
         
         # Performance targets
